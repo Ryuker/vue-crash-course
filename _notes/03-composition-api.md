@@ -8,3 +8,5 @@ npm create vue@latest 02_vue-crash-2024
 ```
 - run `npm i` to install the dependencies
 
+
+left vid at: 22:15 - [vid](https://www.youtube.com/watch?v=VeNfHj6MhgA&t=1334s)
