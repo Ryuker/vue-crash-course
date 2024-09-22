@@ -1,0 +1,10 @@
+# 3. Create Vue Setup and examples notes
+- uses node v20.16.0 (use NVM 20)
+
+# 01. Setup
+- specify the folder name at the end of the install command 
+``` shell
+npm create vue@latest 02_vue-crash-2024
+```
+- run `npm i` to install the dependencies
+
