@@ -1,4 +1,4 @@
-# 3. Create Vue Setup and examples notes
+# 3. Examples in composition API notes
 - uses node v20.16.0 (use NVM 20)
 
 # 01. Setup
