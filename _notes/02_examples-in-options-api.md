@@ -52,10 +52,13 @@
   - `<button @click="clickMe">Click Me</button>`
     - we use the @ symbol to specify a callback to a method in the app, in this case 'clickMe'
     - we then declare and populate the method under `methods:` in the script tag
+
+    - we can accesss data in a method using the this keyword.
 ``` HTML
 methods: {
   clickMe() {
     console.log('Button clicked');
+    this.message = 'Updated Message';
   }
 }
 ```
@@ -77,6 +80,7 @@ methods: {
     methods: {
       clickMe() {
         console.log('Button clicked');
+        this.message = 'Updated Message';
       }
     }
   });
