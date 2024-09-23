@@ -184,3 +184,5 @@ const toggleStatus = () => {
 }
 </script>
 ```
+
+left vid at: 42:27
