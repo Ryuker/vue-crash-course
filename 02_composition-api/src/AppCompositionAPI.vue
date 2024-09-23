@@ -1,4 +1,29 @@
 <script>
+import { ref } from 'vue';
+
+export default {
+  setup() {
+    const name = ref('John Doe');
+    const status = ref('active');
+    const tasks = ref(['Task One', 'Task Two', 'Task Three']);
+
+    const toggleStatus = () => {
+      if (status.value === 'active')
+        status.value = 'pending';
+      else if (status.value === 'pending')
+        status.value = 'inactive';
+      else 
+        status.value = 'active';
+    }
+
+    return {
+      name,
+      status,
+      tasks,
+      toggleStatus
+    }
+  }
+}
 
 </script>
 
@@ -13,12 +38,6 @@
   <ul>
     <li v-for="task in tasks" :key="task">{{ task }}</li>
   </ul>
-
-  <!-- long way -->
-  <a v-bind:href="link">Click for Google</a>
-
-  <!-- shorter version -->
-  <a :href="link">Click for Google</a>
 
   <br>
   <!-- long way -->

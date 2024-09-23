@@ -126,3 +126,39 @@ export default {
 ```
 
 # 03. Composition API examples to demonstrate vue syntax
+- in the composition API we still need to export a setup function
+  - to make variables reactive we can wrap them in a `ref` function, we import this from vue
+  - since the composition API uses modules we have a return method in which we return the variables and the method.
+
+``` Vue AppCompositionAPI.vue
+<script>
+import { ref } from 'vue';
+
+export default {
+  setup() {
+    const name = ref('John Doe');
+    const status = ref('active');
+    const tasks = ref(['Task One', 'Task Two', 'Task Three']);
+
+    const toggleStatus = () => {
+      if (status.value === 'active')
+        status.value = 'pending';
+      else if (status.value === 'pending')
+        status.value = 'inactive';
+      else 
+        status.value = 'active';
+    }
+
+    return {
+      name,
+      status,
+      tasks,
+      toggleStatus
+    }
+  }
+}
+
+</script>
+```
+
+## Shorter syntax
