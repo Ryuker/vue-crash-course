@@ -76,3 +76,13 @@ export default {
 </ul>
 </template>
 ```
+
+## Binding
+- we can bind an attribute to a data variable using `v-bind:`
+
+example:
+- we add a link as data attribute to the script export `link: 'https:google.com'`
+- we bind the href to the link in the template
+``` Vue App.vue
+<a v-bind:href="link">Click for Google</a>
+```
