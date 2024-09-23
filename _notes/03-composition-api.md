@@ -218,4 +218,27 @@ const addTask = () => {
 </template>
 ```
 
+## using the index in v-for
+- we can get the index from a v-for (like in react array.map methods)
+- we can pass values into functions when we pass them as callback | no wacky specifying a callback with an arrow function
+example:
+``` Vue AppCompositionAPI.vue
+<script>
+const deleteTask = (index) => {
+  tasks.value.splice(index, 1);
+}
+</script>
+
+<template>
+<h3>Tasks:</h3>
+<ul>
+  <li v-for="(task, index) in tasks" :key="task">
+    <span>{{ task }}</span>
+    <button @click="deleteTask(index)">x</button>
+  </li>
+</ul>
+</template>
+```
+
+
 left vid at: 42:27
