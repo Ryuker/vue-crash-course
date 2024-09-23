@@ -22,7 +22,7 @@ export default {
 </script>
 
 <template>
-  <h1>Vue Options API Example</h1>
+  <h1>Vue Options API Examples</h1>
   <h2>{{ name }}</h2>
   <p v-if="status === 'active'">User is active</p>
   <p v-else-if="status === 'pending'">User is pending</p>
