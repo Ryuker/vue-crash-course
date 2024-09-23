@@ -162,3 +162,25 @@ export default {
 ```
 
 ## Shorter syntax
+- if we specify `setup` as an attribute on the script tag we don't need to export and use the setup function
+  - this means it's implicitly derived by the vue framework when reading out the component
+
+- This is the cleanest approach for short code.
+``` Vue AppCompositionAPI.vue
+<script setup>
+import { ref } from 'vue';
+
+const name = ref('John Doe');
+const status = ref('active');
+const tasks = ref(['Task One', 'Task Two', 'Task Three']);
+
+const toggleStatus = () => {
+  if (status.value === 'active')
+    status.value = 'pending';
+  else if (status.value === 'pending')
+    status.value = 'inactive';
+  else 
+    status.value = 'active';
+}
+</script>
+```
