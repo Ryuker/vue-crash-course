@@ -241,6 +241,15 @@ const deleteTask = (index) => {
 ```
 
 # 04. Lifecycle Methods
+- onBeforeMount   - called before mounting begins
+- onMounted       - called when component is mounted   
+- onBeforeUpdate  - called when reactive data changes and before re-render
+- onUpdated       - called after re-render
+- onBeforeUnmount - called before the Vue instance is destroyed
+- onUnmounted     - called after the instance is destroyed
+- onActivated     - called when kept-alive component is activated
+- onDeactivated   - called when a kept-alive component is deactivated
+- onErrorCaptured - called when an error is captured from a child component
 
 
 left vid at: 42:27
