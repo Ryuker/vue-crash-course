@@ -251,5 +251,23 @@ const deleteTask = (index) => {
 - onDeactivated   - called when a kept-alive component is deactivated
 - onErrorCaptured - called when an error is captured from a child component
 
+## onMounted example
+- using a basic fetch call to jsonplaceholder todos
+- runs when the component is mounted
+
+``` Vue AppCompositionAPI.vue
+<script>
+// life cycle example
+onMounted(async () => {
+  try {
+    const response = await fetch('https://jsonplaceholder.typicode.com/todos');
+    const data = await response.json();
+    tasks.value = data.map(task => task.title);
+  } catch(error) {
+    console.log('Error fetching tasks');
+  }
+})
+</script>
+```
 
 left vid at: 42:27
