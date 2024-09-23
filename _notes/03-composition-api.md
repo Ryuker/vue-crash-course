@@ -92,3 +92,31 @@ example:
 <!-- shorter version -->
 <a :href="link">Click for Google</a>
 ```
+
+## v-on directive
+- using `v-on:` we can bind to events
+example:
+  - button changes status using a method on click
+``` Vue App.vue
+<script>
+export default {
+  data() {
+    return {
+      status: 'ahaha',
+    };
+  },
+  methods: {
+    toggleStatus() {
+      if (this.status === 'active')
+        this.status = 'pending';
+      else if (this.status === 'pending')
+        this.status = 'inactive'
+      else 
+        this.status = 'active'
+    }
+  }
+}
+</script>
+
+<button v-on:click="toggleStatus">Change Status</button>
+```
