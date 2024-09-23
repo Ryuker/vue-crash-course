@@ -124,3 +124,5 @@ export default {
   <!-- shorter version -->
   <button @click="toggleStatus">Change Status</button>
 ```
+
+# 03. Composition API examples to demonstrate vue syntax
