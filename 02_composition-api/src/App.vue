@@ -40,7 +40,11 @@ export default {
   <a :href="link">Click for Google</a>
 
   <br>
+  <!-- long way -->
   <button v-on:click="toggleStatus">Change Status</button>
+  
+  <!-- shorter version -->
+  <button @click="toggleStatus">Change Status</button>
 
 </template>
 

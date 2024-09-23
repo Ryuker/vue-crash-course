@@ -94,7 +94,7 @@ example:
 ```
 
 ## v-on directive
-- using `v-on:` we can bind to events
+- using `v-on:` we can bind to events, the shorthand for binding to events is the `@` symbol
 example:
   - button changes status using a method on click
 ``` Vue App.vue
@@ -118,5 +118,9 @@ export default {
 }
 </script>
 
-<button v-on:click="toggleStatus">Change Status</button>
+<!-- long way -->
+  <button v-on:click="toggleStatus">Change Status</button>
+  
+  <!-- shorter version -->
+  <button @click="toggleStatus">Change Status</button>
 ```
