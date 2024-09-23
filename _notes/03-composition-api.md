@@ -240,5 +240,7 @@ const deleteTask = (index) => {
 </template>
 ```
 
+# 04. Lifecycle Methods
+
 
 left vid at: 42:27
