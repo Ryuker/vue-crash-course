@@ -185,4 +185,37 @@ const toggleStatus = () => {
 </script>
 ```
 
+## v-model example
+- we can use `v-model` to pass parameters to methods
+example:
+- Form to add tasks to a list
+  - on the form we specify `@submit.prevent="addTask"` | note we can use .prevent to avoid having to use event.preventDefault
+
+``` Vue AppCompositionAPI.vue
+<script setup>
+import { ref } from 'vue';
+
+const tasks = ref(['Task One', 'Task Two', 'Task Three']);
+const newTask = ref('');
+
+const addTask = () => {
+  if (newTask.value.trim() !== ''){
+    tasks.value.push(newTask.value);
+    newTask.value = '';
+  }
+    
+}
+</script>
+
+
+<template>
+<!-- form -->
+<form @submit.prevent="addTask">
+  <label for="newTask">Add Task</label>
+  <input type="text" id="newTask" name="newTask" v-model="newTask"/>
+  <button type="submit">Submit</button>
+</form>
+</template>
+```
+
 left vid at: 42:27
