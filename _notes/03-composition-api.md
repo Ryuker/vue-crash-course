@@ -83,6 +83,12 @@ export default {
 example:
 - we add a link as data attribute to the script export `link: 'https:google.com'`
 - we bind the href to the link in the template
+  - we can use `v-bind:href` for this or `:href`
+    - so using a `:` specified a bind
 ``` Vue App.vue
+<!-- long way -->
 <a v-bind:href="link">Click for Google</a>
+
+<!-- shorter version -->
+<a :href="link">Click for Google</a>
 ```
