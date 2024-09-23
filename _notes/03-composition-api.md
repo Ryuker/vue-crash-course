@@ -13,10 +13,12 @@ left vid at: 22:15 - [vid](https://www.youtube.com/watch?v=VeNfHj6MhgA&t=1334s)
 
 ## Basic mounting setup (already included in project scaffold)
 ```js src/main.js
-import './assets/main.css'
-
 import { createApp } from 'vue'
 import App from './App.vue'
 
 createApp(App).mount('#app')
 ```
+
+- cleaned out App.vue for a clean start
+- cleaned out components folder
+- 
