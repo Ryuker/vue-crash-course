@@ -270,4 +270,4 @@ onMounted(async () => {
 </script>
 ```
 
-left vid at: 42:27
+left vid at: 51:55
