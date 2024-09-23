@@ -52,3 +52,27 @@ export default {
 </style>
 
 ```
+
+## iterating over an array
+- we can use `v-for` to iterate over an array
+  - we need to specify a key for UL elements (like is the case in React)
+example:
+- renders a list item for each task in the array with the task as content
+``` Vue App.vue
+<script>
+export default {
+  data() {
+    return {
+      tasks: ['Task One', 'Task Two', 'Task Three'],
+    };
+  },
+}
+</script>
+
+<template>
+<h3>Tasks:</h3>
+<ul>
+  <li v-for="task in tasks" :key="task">{{ task }}</li>
+</ul>
+</template>
+```

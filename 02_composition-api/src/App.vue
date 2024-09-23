@@ -3,7 +3,8 @@ export default {
   data() {
     return {
       name: 'John Doe',
-      status: 'ahaha'
+      status: 'ahaha',
+      tasks: ['Task One', 'Task Two', 'Task Three'],
     };
   },
 }
@@ -15,6 +16,11 @@ export default {
   <p v-if="status === 'active'">User is active</p>
   <p v-else-if="status === 'pending'">User is pending</p>
   <p v-else>User is inactive</p>
+
+  <h3>Tasks:</h3>
+  <ul>
+    <li v-for="task in tasks" :key="task">{{ task }}</li>
+  </ul>
 </template>
 
 <style scoped>
