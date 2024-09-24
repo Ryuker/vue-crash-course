@@ -128,3 +128,6 @@ theme: {
 ```
 - imported component into App.vue and rendered inside template tag
 
+## Passing propt to the Hero Component
+
+
