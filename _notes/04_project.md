@@ -5,4 +5,17 @@
 
 ## Setting Up Tailwind
 - [setup instructions](https://tailwindcss.com/docs/guides/vite#vue)
+``` shell 
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p
+```
 
+- specified content key in tailwind.config.js
+``` js tailwind.config.js
+content: [
+  "./index.html",
+  "./src/**/*.{vue,js,ts,jsx,tsx}",
+],
+```
+- Added `src/style.css`
+- Imported style into main.js | `import './style.css';`
