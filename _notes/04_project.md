@@ -152,3 +152,5 @@ defineProps({
 # 03. Home Cards Component
 - This is a container for the cards
 
+left vid at: 1:05:17
+
