@@ -147,5 +147,7 @@ defineProps({
 
 - We then render the title inside the template using `{{ title }}
 - We then specify title in `App.vue` on the hero element | `<Hero title="Test Title" />`
+- did the same for the subtitle
+
 
 
