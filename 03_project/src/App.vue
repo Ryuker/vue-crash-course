@@ -5,5 +5,5 @@
 
 <template>
   <Navbar />
-  <Hero />
+  <Hero title="Test Title" />
 </template>

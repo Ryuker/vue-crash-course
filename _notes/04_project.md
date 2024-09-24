@@ -128,6 +128,24 @@ theme: {
 ```
 - imported component into App.vue and rendered inside template tag
 
-## Passing propt to the Hero Component
+## Passing props to the Hero Component
+- for this we need to import the `defineProps` function from vue
+- we then run the function and pass it an object with the props specifications
+example:
+```Vue components/hero.vue
+<script>
+import { defineProps } from 'vue';
+
+defineProps({
+  title: {
+    type: String,
+    default: 'Become a Vue Dev'
+  }
+})
+</script>
+```
+
+- We then render the title inside the template using `{{ title }}
+- We then specify title in `App.vue` on the hero element | `<Hero title="Test Title" />`
 
 
