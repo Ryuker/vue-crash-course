@@ -19,3 +19,19 @@ content: [
 ```
 - Added `src/style.css`
 - Imported style into main.js | `import './style.css';`
+
+## Configured theme
+- specified `Poppins` as font to use
+- added a utility class to gridTemplateColumns
+```js tailwind.config.js
+theme: {
+  extend: {
+    fontFamily: {
+      sans: ['Poppins', 'sans-serif']
+    },
+    gridTemplateColumns: {
+      '70/30': '70% 28%'
+    }
+  },
+},
+```
