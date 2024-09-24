@@ -149,5 +149,6 @@ defineProps({
 - We then specify title in `App.vue` on the hero element | `<Hero title="Test Title" />`
 - did the same for the subtitle
 
-
+# 03. Home Cards Component
+- This is a container for the cards
 
