@@ -207,6 +207,7 @@ defineProps({
 - broke down which props we'll need
   - type      - String - remote, full-time
   - position  - String 
+  - description - String
   - salary    - String
   - location  - String
   - link      - String
@@ -215,6 +216,8 @@ defineProps({
 - added `components/JobCard.vue`
 - copied over the JobCard HTML from the design in the JobCard template tag
 - imported card into `JobListings.vue`
+- specified props in JobCard to dynamically render data
+  - and rendered this data inside the component in the proper places
 
 
 
