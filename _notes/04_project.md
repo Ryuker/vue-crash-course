@@ -201,7 +201,15 @@ defineProps({
 <template>
 ```
 
-
+# 05. Job Listings Component
+- added `components/JobListings.vue` with basic template and imported into `App.vue`
+- copied over the HTML from the design
+- broke down which props we'll need
+  - type      - String - remote, full-time
+  - position  - String 
+  - salary    - String
+  - location  - String
+  - link      - String
 
 left vid at: 1:05:17
 
