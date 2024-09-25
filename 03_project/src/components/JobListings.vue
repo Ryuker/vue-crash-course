@@ -8,7 +8,6 @@ import JobCard from './JobCard.vue';
           Browse Jobs
         </h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <!-- Job Listing 1 -->
           <JobCard 
             type="Full-Time"
             position="Senior Vue Developer"
@@ -19,69 +18,25 @@ import JobCard from './JobCard.vue';
             location="Boston, MA"
             link="https://bol.com"
           />
-          <!-- Job Listing 2 -->
-          <div class="bg-white rounded-xl shadow-md relative">
-            <div class="p-4">
-              <div class="mb-6">
-                <div class="text-gray-600 my-2">Remote</div>
-                <h3 class="text-xl font-bold">Front-End Engineer (Vue)</h3>
-              </div>
-
-              <div class="mb-5">
-                Join our team as a Front-End Developer in sunny Miami, FL. We
-                are looking for a motivated individual with a passion...
-              </div>
-
-              <h3 class="text-green-500 mb-2">$70K - $80K / Year</h3>
-
-              <div class="border border-gray-100 mb-5"></div>
-
-              <div class="flex flex-col lg:flex-row justify-between mb-4">
-                <div class="text-orange-700 mb-3">
-                  <i class="fa-solid fa-location-dot text-lg"></i>
-                  Miami, FL
-                </div>
-                <a
-                  href="job.html"
-                  class="h-[36px] bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg text-center text-sm"
-                >
-                  Read More
-                </a>
-              </div>
-            </div>
-          </div>
-          <!-- Job Listing 3 -->
-          <div class="bg-white rounded-xl shadow-md relative">
-            <div class="p-4">
-              <div class="mb-6">
-                <div class="text-gray-600 my-2">Remote</div>
-                <h3 class="text-xl font-bold">Vue.js Developer</h3>
-              </div>
-
-              <div class="mb-5">
-                Are you passionate about front-end development? Join our team in
+          <JobCard 
+            type="Remote"
+            position="Front-End Engineer (Vue)"
+            description="Join our team as a Front-End Developer in sunny Miami, FL. We
+                are looking for a motivated individual with a passion..."
+            salary="$70K - $80K / Year"
+            location="Miami, FL"
+            link="https://amazon.com"
+          />
+          <JobCard 
+            type="Part-Time"
+            position="Vue.js Developer"
+            description="Are you passionate about front-end development? Join our team in
                 vibrant Brooklyn, NY, and work on exciting projects that make a
-                difference...
-              </div>
-
-              <h3 class="text-green-500 mb-2">$70K - $80K / Year</h3>
-
-              <div class="border border-gray-100 mb-5"></div>
-
-              <div class="flex flex-col lg:flex-row justify-between mb-4">
-                <div class="text-orange-700 mb-3">
-                  <i class="fa-solid fa-location-dot text-lg"></i>
-                  Brooklyn, NY
-                </div>
-                <a
-                  href="job.html"
-                  class="h-[36px] bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg text-center text-sm"
-                >
-                  Read More
-                </a>
-              </div>
-            </div>
-          </div>
+                difference..."
+            salary="$70K - $80K / Year"
+            location="Brooklyn, NY"
+            link="https://paypal.com"
+          />
         </div>
       </div>
     </section>
