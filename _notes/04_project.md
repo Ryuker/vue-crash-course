@@ -150,7 +150,9 @@ defineProps({
 - did the same for the subtitle
 
 # 03. Home Cards Component
-- This is a container for the cards
+- Added `components/HomeCards.vue` with a basic template and imported into App.vue
+- copied over `developers and employers` html from design
+
 
 left vid at: 1:05:17
 
