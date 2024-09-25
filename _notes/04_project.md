@@ -153,6 +153,55 @@ defineProps({
 - Added `components/HomeCards.vue` with a basic template and imported into App.vue
 - copied over `developers and employers` html from design
 
+# 04. Card component
+- this is to give flexibility to reuse the cards with different colors etc
+- added `components/Card.vue` with basic template and imported into `HomeCards.vue`
+- cut and pasted the card html in the developers and employers section. 
+  - We'll modify this to be reusable
+
+## using props to make the background color dynamic
+- defined a `bgColor` prop on the component 
+  - referencing this prop in the class attribute using a bind with the `:`
+  - specified color on the component inside `HomeCards.vue`
+```Vue Card.vue
+<script setup>
+import { defineProps } from 'vue';
+
+defineProps({
+  bgColor: {
+    type: String,
+    default: 'bg-gray-100'
+  }
+})
+
+</script>
+<template>
+  <div :class="bgColor + ' p-6 rounded-lg shadow-md'">
+    <!-- other content -->
+</template>
+```
+
+## Using slots to pass in content to the component
+- added `<slot />` into the component template
+- specified the content inside the render of the card component
+``` JS HomeCards.vue
+<template>
+  <Card bgColor="bg-gray-100">
+    <h2 class="text-2xl font-bold">For Developers</h2>
+      <p class="mt-2 mb-4">
+        Browse our Vue jobs and start your career today
+      </p>
+      <a
+        href="jobs.html"
+        class="inline-block bg-black text-white rounded-lg px-4 py-2 hover:bg-gray-700"
+      >
+        Browse Jobs
+      </a>
+  </Card>
+<template>
+```
+
+
 
 left vid at: 1:05:17
 
