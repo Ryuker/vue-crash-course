@@ -211,7 +211,12 @@ defineProps({
   - location  - String
   - link      - String
 
-  
+## Job Card Component
+- added `components/JobCard.vue`
+- copied over the JobCard HTML from the design in the JobCard template tag
+- imported card into `JobListings.vue`
+
+
 
 left vid at: 1:05:17
 
