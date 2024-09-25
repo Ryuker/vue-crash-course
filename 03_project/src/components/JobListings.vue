@@ -9,7 +9,16 @@ import JobCard from './JobCard.vue';
         </h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
           <!-- Job Listing 1 -->
-          <JobCard />
+          <JobCard 
+            type="Full-Time"
+            position="Senior Vue Developer"
+            description="We are seeking a talented Front-End Developer to join our team
+                in Boston, MA. The ideal candidate will have strong skills in
+                HTML, CSS, and JavaScript..."
+            salary="$70 - $80K / Year"
+            location="Boston, MA"
+            link="https://bol.com"
+          />
           <!-- Job Listing 2 -->
           <div class="bg-white rounded-xl shadow-md relative">
             <div class="p-4">
