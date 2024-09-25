@@ -218,6 +218,7 @@ defineProps({
 - imported card into `JobListings.vue`
 - specified props in JobCard to dynamically render data
   - and rendered this data inside the component in the proper places
+- specified JobCard attributes in JobListings
 
 
 
