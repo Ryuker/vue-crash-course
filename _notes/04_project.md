@@ -281,6 +281,22 @@ defineProps({
 - used the limit to slide the array in the template tag `v-for="job in jobs.slice(0, limit || jobs.length)"`
 - specified the limit on the component in App.vue
 
+# View all Jobs section and button
+- added showButton as prop to JobListings props
+```JS JobListings.vue
+showButton: {
+  type: Boolean,
+  default: false
+}
+```
+- used v-if to only show the button when the boolean is true
+``` HTML JobListings
+<a v-if="showButton"
+  href="/jobs"
+  class="block bg-black text-white text-center py-4 px-6 rounded-xl hover:bg-gray-700"
+  >View All Jobs</a
+>
+```
 
 left vid at: 1:05:17
 
