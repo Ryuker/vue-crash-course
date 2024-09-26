@@ -268,5 +268,19 @@ const jobs = ref(jobData);
 </template>
 ```
 
+# 08. Limiting amount of jobs displayed in JobListings component
+- defined a limit prop in `JobListings.vue`
+```JS JobListings.vue
+defineProps({
+  limit: {
+    type: Number,
+    default: 3
+  }
+})
+```
+- used the limit to slide the array in the template tag `v-for="job in jobs.slice(0, limit || jobs.length)"`
+- specified the limit on the component in App.vue
+
+
 left vid at: 1:05:17
 

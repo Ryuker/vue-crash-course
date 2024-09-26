@@ -9,7 +9,7 @@
   <Navbar />
   <Hero title="Test Title" subTitle="Test Subtitle"/>
   <HomeCards />
-  <JobListings />
+  <JobListings limit="6"/>
 
   <section class="m-auto max-w-lg my-10 px-6">
     <a
