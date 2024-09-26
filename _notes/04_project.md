@@ -221,6 +221,10 @@ defineProps({
 - specified JobCard attributes in JobListings
 
 
+## Define Props is Compiler Macro
+- apparantly in Vite there's no need to import defineProps anymore in a vue project
+  - it's a compiler macro that just handles the import
+  - so I removed it from the components.
 
 left vid at: 1:05:17
 
