@@ -298,5 +298,7 @@ showButton: {
 >
 ```
 
-left vid at: 1:05:17
+# 09. Computed function
+
+left vid at: 1:24:17
 
