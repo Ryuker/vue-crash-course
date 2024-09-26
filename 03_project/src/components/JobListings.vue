@@ -18,6 +18,7 @@ console.log(jobs.value);
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
             <JobCard v-for="job in jobs"
               :key="job.id"
+              :type="job.type"
               :position="job.title"
               :description="job.description"
               :salary="job.salary"
