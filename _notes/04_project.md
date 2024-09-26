@@ -219,6 +219,23 @@ defineProps({
 - specified props in JobListing to dynamically render data
   - and rendered this data inside the component in the proper places
 - specified JobListing attributes in JobListings
+```Vue JobListing.vue
+<script setup>
+defineProps({
+  job: {
+    type: Object,
+    default: {
+      id: 0,
+      type: 'Job Type',
+      title: 'Job Title',
+      description: 'Job Description',
+      salary: 'Job Salary',
+      location: 'Job Location',
+    }
+  }
+})
+</script>
+```
 
 
 ## Define Props is Compiler Macro
@@ -246,15 +263,7 @@ const jobs = ref(jobData);
 
 <template>
 <!-- other template code -->
-  <JobListing v-for="job in jobs"
-    :key="job.id"
-    :type="job.type"
-    :position="job.title"
-    :description="job.description"
-    :salary="job.salary"
-    :location="job.location"
-    :link="`./jobs/${job.id}`"             
-  />
+  <JobListing v-for="job in jobs" :key="job.id" :job="job"/>
 <!-- other template code -->
 </template>
 ```
