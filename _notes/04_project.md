@@ -231,7 +231,32 @@ defineProps({
   - so I just copied over the HTML from the design and changed the link
 
 # 07. Importing Jobs mock data from JSON file  
-- 
+- added job.json to `data/jobs.json` | also added jobs2.json
+- imported the data into `JobListings.vue`
+- used v-for to display a card component for each job
+``` Vue JobListings.vue
+<script setup>
+import JobCard from './JobCard.vue';
+import jobData from '@/data/jobs2.json';
+import { ref } from 'vue';
+
+const jobs = ref(jobData);
+
+</script>
+
+<template>
+<!-- other template code -->
+  <JobCard v-for="job in jobs"
+    :key="job.id"
+    :position="job.title"
+    :description="job.description"
+    :salary="job.salary"
+    :location="job.location"
+    :link="`./jobs/${job.id}`"             
+  />
+<!-- other template code -->
+</template>
+```
 
 left vid at: 1:05:17
 
