@@ -248,6 +248,7 @@ const jobs = ref(jobData);
 <!-- other template code -->
   <JobCard v-for="job in jobs"
     :key="job.id"
+    :type="job.type"
     :position="job.title"
     :description="job.description"
     :salary="job.salary"
