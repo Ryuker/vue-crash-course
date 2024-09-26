@@ -212,13 +212,13 @@ defineProps({
   - location  - String
   - link      - String
 
-## Job Card Component
-- added `components/JobCard.vue`
-- copied over the JobCard HTML from the design in the JobCard template tag
+## Job Listing Component
+- added `components/JobListing.vue`
+- copied over the JobListing HTML from the design in the JobCard template tag
 - imported card into `JobListings.vue`
-- specified props in JobCard to dynamically render data
+- specified props in JobListing to dynamically render data
   - and rendered this data inside the component in the proper places
-- specified JobCard attributes in JobListings
+- specified JobListing attributes in JobListings
 
 
 ## Define Props is Compiler Macro
@@ -233,10 +233,10 @@ defineProps({
 # 07. Importing Jobs mock data from JSON file  
 - added job.json to `data/jobs.json` | also added jobs2.json
 - imported the data into `JobListings.vue`
-- used v-for to display a card component for each job
+- used v-for to display a JobListing component for each job
 ``` Vue JobListings.vue
 <script setup>
-import JobCard from './JobCard.vue';
+import JobListing from './JobListing.vue';
 import jobData from '@/data/jobs2.json';
 import { ref } from 'vue';
 
@@ -246,7 +246,7 @@ const jobs = ref(jobData);
 
 <template>
 <!-- other template code -->
-  <JobCard v-for="job in jobs"
+  <JobListing v-for="job in jobs"
     :key="job.id"
     :type="job.type"
     :position="job.title"
