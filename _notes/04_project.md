@@ -226,5 +226,9 @@ defineProps({
   - it's a compiler macro that just handles the import
   - so I removed it from the components.
 
+# 06. All Jobs Section
+- this isn't really component worthy imo since it's just one section
+  - so I just copied over the HTML from the design and changed the link
+
 left vid at: 1:05:17
 

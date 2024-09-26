@@ -10,4 +10,12 @@
   <Hero title="Test Title" subTitle="Test Subtitle"/>
   <HomeCards />
   <JobListings />
+
+  <section class="m-auto max-w-lg my-10 px-6">
+    <a
+      href="/jobs"
+      class="block bg-black text-white text-center py-4 px-6 rounded-xl hover:bg-gray-700"
+      >View All Jobs</a
+    >
+  </section>
 </template>
