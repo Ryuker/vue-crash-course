@@ -230,5 +230,8 @@ defineProps({
 - this isn't really component worthy imo since it's just one section
   - so I just copied over the HTML from the design and changed the link
 
+# 07. Importing Jobs mock data from JSON file  
+- 
+
 left vid at: 1:05:17
 
