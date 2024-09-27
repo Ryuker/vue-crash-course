@@ -461,6 +461,7 @@ import JobListings from '@/components/JobListings.vue';
 ```
 
 # 14. Using RouterLink instead of the <a> tags
+- routerlink prevents us from having to refresh the page, this is better for performance and network impacts
 - imported `RouterLink` from vue-router into Navbar
 - changed the a elements to use RouterLink instead
   - this requires we change `href` to `to` instead
@@ -471,6 +472,8 @@ example:
   Home
 </RouterLink>
 ```
+
+- Imported and used `RouterLink` in HomeCards.vue and `JobListing.vue` as well
 
 
 
