@@ -346,8 +346,20 @@ const truncatedDescription = computed(() => {
 </div>
 ```
 
-# 10. Location Icons using VueAwesome
-- 
+# 10. Location Icons using PrimeIcons
+- [website](https://primevue.org/icons)
+``` shell 
+npm install primeicons
+``` 
+- we install this package with NPM and then import it into main.js
+``` JS main.js
+import 'primeicons/primeicons.css';
+```
+- We the use the prime classes on the `<i>` element
+``` HTML
+<i class="pi pi-map-marker text-orange-700"></i>
+```
+
 
 left vid at: 1:24:17
 
