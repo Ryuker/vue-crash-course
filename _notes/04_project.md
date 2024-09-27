@@ -448,6 +448,18 @@ app.mount('#app');
 - added Jobs page to router and imported the view
 - modified navbar to link to the proper urls
 
+# 13. Job Page Content
+- we just import the job listings component into `views/JobsView.vue` and render it
+```JS JobListings.vue
+<script setup>
+import JobListings from '@/components/JobListings.vue';
+</script>
+
+<template>
+  <JobListings limit="6"/>
+</template>
+```
+
 
 
 

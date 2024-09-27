@@ -8,7 +8,7 @@ const jobs = ref(jobData);
 defineProps({
   limit: {
     type: Number,
-    default: 3
+    default: null
   },
   showButton: {
     type: Boolean,
