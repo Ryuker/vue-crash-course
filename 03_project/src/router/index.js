@@ -14,13 +14,13 @@ const router = createRouter({
     {
       path: '/jobs',
       name: 'Jobs',
-      component: JobsView
+      component: JobsView,
+      // {
+      //   path: '/add-job',
+      //   name: 'Add Job',
+      //   component: AddJobView
+      // }
     },
-    {
-      path: '/add-job',
-      name: 'Add Job',
-      component: AddJobView
-    }
   ]
 });
 

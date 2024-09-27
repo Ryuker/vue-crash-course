@@ -446,7 +446,6 @@ app.mount('#app');
 # 12. Adding the Job Page and AddJob Route
 - added `views/JobsView.vue` with a basic template
 - added Jobs page to router and imported the view
-- repeated the same for the AddJob page
 - modified navbar to link to the proper urls
 
 
