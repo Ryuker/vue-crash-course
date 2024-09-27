@@ -475,6 +475,24 @@ example:
 
 - Imported and used `RouterLink` in `HomeCards.vue`, `JobListings.vue` and`JobListing.vue` as well
 
+## 15. Navbar active link
+- for this we import `useRoute` from `vue-router` in `Navbar.vue`
+- we add a function to check if we are on the activeLink page
+``` JS components/Navbar.vue
+const isActiveLink = (routePath) => {
+  const route = useRoute();
+  return route.path === routePath;
+}
+```
+- we bind the class of the RouterLinks and specify the active link classes using a ternary
+  - note that when we bind to the class attribute we can specify css classes in an array
+``` JS components/Navbar.vue
+<RouterLink to="/"
+  :class="[isActiveLink('/') ? 'bg-green-900' : 'hover:bg-gray-900 hover-text-white', 
+  'text-white', 'rounded-md', 'px-3', 'py-2']">
+  Home
+</RouterLink>
+```
 
 
 
