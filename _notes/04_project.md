@@ -309,6 +309,7 @@ showButton: {
 ## Truncated Job Description
 - we're using this to show a truncated description
   - We import ref and computed from vue
+  - we store defineProps into a props variable so we can access props in the object
   - We declare a boolean ref value to toggle the description display later
   - We declare a `toggleFullDescription` function that toggles the boolean
   - We declare a computed property with a callback function
@@ -320,6 +321,10 @@ showButton: {
 Example:
 ```JS Vue JobListing.vue
 import { ref, computed } from 'vue';
+const props = defineProps({
+  // props
+})
+
 const showFullDescription = ref(false);
 
 const toggleFullDescription = () => {
@@ -359,6 +364,8 @@ import 'primeicons/primeicons.css';
 ``` HTML
 <i class="pi pi-map-marker text-orange-700"></i>
 ```
+
+# 11. Setting up Vue Router
 
 
 left vid at: 1:24:17
