@@ -345,5 +345,9 @@ const truncatedDescription = computed(() => {
   </button>
 </div>
 ```
+
+# 10. Location Icons using VueAwesome
+- 
+
 left vid at: 1:24:17
 
