@@ -460,6 +460,19 @@ import JobListings from '@/components/JobListings.vue';
 </template>
 ```
 
+# 14. Using RouterLink instead of the <a> tags
+- imported `RouterLink` from vue-router into Navbar
+- changed the a elements to use RouterLink instead
+  - this requires we change `href` to `to` instead
+
+example: 
+```Vue components/Navbar.vue
+<RouterLink to="/">
+  Home
+</RouterLink>
+```
+
+
 
 
 
