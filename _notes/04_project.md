@@ -366,6 +366,83 @@ import 'primeicons/primeicons.css';
 ```
 
 # 11. Setting up Vue Router
+- normally we'd just install the router with the full vue installation instead when we create a vite project
+- but to leanr how to set it up we install the package
+``` shell
+npm i vue-router
+```
+- we added `src/router`
+- inside this we add `index.js`
+- we import `createRouter` and `createWebhistory` into index.js
+- we need a view to import so we add `src/views`, a view is is basically a page
+
+## Setting up Home View
+- we add `views/HomeView.vue`
+- we copy over the components from App.vue apart from the Navbar
+```Vue HomeView.vue
+<script setup>
+import Hero from '@/components/Hero.vue';
+import HomeCards from '@/components/HomeCards.vue';
+import JobListings from '@/components/JobListings.vue';
+</script>
+
+<template>
+  <Hero title="Become a Vue Dev" subTitle="Find the Vue job that fits your skills and needs"/>
+  <HomeCards />
+  <JobListings limit="6" showButton="true"/>
+</template>
+```
+- In App.view we remove the components apart from the navbar
+
+## Creating the router
+- in `router/index.js` we declare a router constant and export it
+  - very similar to React router approach
+``` JS index.js
+const router = createRouter({
+  history: createWebHistory(import.meta.env.BASE_URL), 
+  routes: [
+    {
+      path: '/',
+      name: 'Home',
+      component: HomeView
+    }
+  ]
+});
+
+export default router;
+```
+
+## Specifying the router to be used as middleware in main.js
+- in `src/main.js` we import the router and then modify the code so we can specify the router as middleware
+  - very similar to what we do in Express
+``` JS main.js
+
+import router from './router';
+import { createApp } from 'vue'
+import App from './App.vue';
+
+const app = createApp(App);
+
+app.use(router);
+
+app.mount('#app');
+```
+
+## Rendering the View in App.vue
+- In App.vue we import RouterView and then display it in the template tag
+  - similar to an 'outlet' in React-Router
+```JS App.vue
+<script setup>
+  import Navbar from './components/Navbar.vue';
+  import { RouterView } from 'vue-router';
+</script>
+
+<template>
+  <Navbar />
+  <RouterView />
+</template>
+```
+
 
 
 left vid at: 1:24:17
