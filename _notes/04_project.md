@@ -310,6 +310,7 @@ showButton: {
 - we're using this to show a truncated description
   - We import ref and computed from vue
   - We declare a boolean ref value to toggle the description display later
+  - We declare a `toggleFullDescription` function that toggles the boolean
   - We declare a computed property with a callback function
     - in the computed property we get the full description
     - we check the toggle boolean
@@ -320,6 +321,10 @@ Example:
 ```JS Vue JobListing.vue
 import { ref, computed } from 'vue';
 const showFullDescription = ref(false);
+
+const toggleFullDescription = () => {
+  showFullDescription.value = !showFullDescription.value;
+}
 
 const truncatedDescription = computed(() => {
   let description = props.job.description;
@@ -332,7 +337,12 @@ const truncatedDescription = computed(() => {
 ```
 ```HTML JobListing.vue
 <div class="mb-5">
-  {{ truncatedDescription }}
+  <div>{{ truncatedDescription }}</div>
+  <button 
+    @click="toggleFullDescription" 
+    class="text-green-500 hover:text-green-600 mb-5">
+    {{ showFullDescription ? 'Less' : 'More' }}
+  </button>
 </div>
 ```
 left vid at: 1:24:17
