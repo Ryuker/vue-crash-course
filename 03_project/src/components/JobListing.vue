@@ -1,6 +1,7 @@
 <script setup>
+import { ref, computed } from 'vue';
 
-defineProps({
+const props = defineProps({
   job: {
     type: Object,
     default: {
@@ -13,6 +14,18 @@ defineProps({
     }
   }
 })
+
+const showFullDescription = ref(false);
+
+const truncatedDescription = computed(() => {
+  let description = props.job.description;
+  
+  if(!showFullDescription.value) {
+    description = description.substring(0, 90) + '...';
+  }
+  return description;
+});
+
 </script>
 <template>
   <div class="bg-white rounded-xl shadow-md relative">
@@ -23,7 +36,7 @@ defineProps({
       </div>
 
       <div class="mb-5">
-        {{ job.description }}
+        {{ truncatedDescription }}
       </div>
 
       <h3 class="text-green-500 mb-2">{{ job.salary }} / Year</h3>

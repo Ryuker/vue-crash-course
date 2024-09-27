@@ -299,6 +299,41 @@ showButton: {
 ```
 
 # 09. Computed function
+- `computed` takes in a function. 
+  - in this function we can evaluate value changes and run code in response.
+    - it's comparable to useEffect in React
+  - computed props themselves are `readonly` | [explanation](https://medium.com/@joaofornazari/computed-vs-ref-props-on-vue-3-582b1327e74a)
+    - computed props are operations done on reactive props, and the computed prop itself is readonly;
+    - ref props are reactive props and can be changed, and can only be set by passing objects to it, not operations.
 
+## Truncated Job Description
+- we're using this to show a truncated description
+  - We import ref and computed from vue
+  - We declare a boolean ref value to toggle the description display later
+  - We declare a computed property with a callback function
+    - in the computed property we get the full description
+    - we check the toggle boolean
+      - if the boolean is false we truncate the description and return the results  
+
+  - we then render the computer property in the template tag
+Example:
+```JS Vue JobListing.vue
+import { ref, computed } from 'vue';
+const showFullDescription = ref(false);
+
+const truncatedDescription = computed(() => {
+  let description = props.job.description;
+  
+  if(!showFullDescription.value) {
+    description = description.substring(0, 90) + '...';
+  }
+  return description;
+});
+```
+```HTML JobListing.vue
+<div class="mb-5">
+  {{ truncatedDescription }}
+</div>
+```
 left vid at: 1:24:17
 
