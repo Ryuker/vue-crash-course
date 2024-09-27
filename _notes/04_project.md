@@ -473,7 +473,7 @@ example:
 </RouterLink>
 ```
 
-- Imported and used `RouterLink` in HomeCards.vue and `JobListing.vue` as well
+- Imported and used `RouterLink` in `HomeCards.vue`, `JobListings.vue` and`JobListing.vue` as well
 
 
 
