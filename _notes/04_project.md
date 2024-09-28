@@ -558,6 +558,14 @@ npm i json-server
 "server": "json-server --watch src/jobs.json --port 5000"
 ```
 
+# 19. Setting up Axios to fetch the data
+- this is option but it's ok to setup I think
+- to install:
+```shell
+npm i axios
+```
+
+
 
 
 left vid at: 1:50:54

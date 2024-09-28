@@ -1,6 +1,6 @@
 <script setup>
 import { RouterLink } from 'vue-router';
-import jobData from '@/data/jobs.json';
+// import jobData from '@/data/jobs.json';
 import { ref } from 'vue';
 import JobListing from './JobListing.vue';
 
