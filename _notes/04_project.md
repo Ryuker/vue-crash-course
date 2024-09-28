@@ -633,6 +633,19 @@ onMounted(async () => {
 ``` shell
 npm i vue-spinner
 ```
+## importing and rendering PulseLoader
+- imported `PulseLoader` from `Vue-Spinner/src/PulseLoader.js`
+- added v-if and v-else to display spinner or the jobs
+```JS JobListings.vue
+<!-- Show loading spinner while loading is true -->
+<div v-if="state.isLoading" class="text-center text-gray-500 py-6">
+  <PulseLoader />
+</div>
+<!-- Show job listing when done loading -->
+<div v-else class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <JobListing v-for="job in state.jobs.slice(0, limit || state.jobs.length)" :key="job.id" :job="job"/>
+</div>
+``` 
 
 
 left vid at: 1:50:54
