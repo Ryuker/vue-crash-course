@@ -525,6 +525,11 @@ import { RouterLink } from 'vue-router';
 }
 ```
 
+# 17. JobView component
+- added `views/JobView.vue`
+- copied over HTML from design
+- imported RouterLink and changed links to use this instead
+
 
 
 left vid at: 1:50:54
