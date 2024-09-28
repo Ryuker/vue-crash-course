@@ -593,6 +593,40 @@ differences:
     - can take objects and primitives
     - has a `.value` property for reassigning
 
+- most vue developers stick to using `ref()`
+
+usage example:
+- modified JobListings to use a reactive() state object to hold jobs instead
+  - also has an isLoading field
+- modified onLoading and template
+``` JS
+import { reactive } from 'vue';
+// other code
+const state = reactive({
+  jobs: [],
+  isLoading: true
+});
+
+// other code
+
+onMounted(async () => {
+  try{
+    const response = await axios.get('http://localhost:5000/jobs');
+    // jobs.value = response.data;
+    state.jobs = response.data;
+  } catch(error){
+    console.error('Error fetching jobs', error);
+  } finally {
+    state.isLoading = false;
+  }
+});
+```
+
+```JS 
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <JobListing v-for="job in state.jobs.slice(0, limit || state.jobs.length)" :key="job.id" :job="job"/>
+</div>
+```
 
 
 left vid at: 1:50:54
