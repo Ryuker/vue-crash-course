@@ -583,6 +583,16 @@ onMounted(async () => {
 });
 ```
 
+# 21. Ref vs Reactive
+- This a different way to deal with reactive data on a page
+differences:
+  - `reactive()` 
+    - only takes objects. It does not take primitives like strings, numbers and booleans. It uses 'ref()' under the hood.
+    - doesn't use `.value` and can't be reassigned
+  - `ref()`
+    - can take objects and primitives
+    - has a `.value` property for reassigning
+
 
 
 left vid at: 1:50:54
