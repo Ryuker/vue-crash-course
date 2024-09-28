@@ -1,10 +1,11 @@
 <script setup>
+import axios from 'axios';
 import { RouterLink } from 'vue-router';
 // import jobData from '@/data/jobs.json';
-import { ref } from 'vue';
+import { ref, onMounted} from 'vue';
 import JobListing from './JobListing.vue';
 
-const jobs = ref(jobData);
+const jobs = ref([]);
 
 defineProps({
   limit: {
@@ -16,6 +17,15 @@ defineProps({
     default: false
   }
 })
+
+onMounted(async () => {
+  try{
+    const response = await axios.get('http://localhost:5000/jobs');
+    jobs.value = response.data;
+  }catch(error){
+    console.error('Error fetching jobs', error);
+  }
+});
 
 </script>
 <template>

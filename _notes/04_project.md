@@ -565,6 +565,23 @@ npm i json-server
 npm i axios
 ```
 
+# 20. Modifying JobListings to use Axios to fetch the jobs data
+- we import `axios`
+- modified job constant ref to use an empty array
+- imported `onMounted` from vue
+- in onMounted, added an async callback function in which the data is fetches and set using axios.
+``` JS components/JobListings.vue
+const jobs = ref([]);
+// other code
+onMounted(async () => {
+  try{
+    const response = await axios.get('http://localhost:5000/jobs');
+    jobs.value = response.data;
+  }catch(error){
+    console.error('Error fetching jobs', error);
+  }
+});
+```
 
 
 
