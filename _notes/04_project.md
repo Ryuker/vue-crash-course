@@ -628,6 +628,12 @@ onMounted(async () => {
 </div>
 ```
 
+# 22. Setting up a loading spinner using Vue Spinner
+- to install
+``` shell
+npm i vue-spinner
+```
+
 
 left vid at: 1:50:54
 
