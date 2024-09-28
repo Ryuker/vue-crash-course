@@ -538,6 +538,9 @@ import { RouterLink } from 'vue-router';
 },
 ```
 
+# 18. Implement JSON server to serve data
+
+
 
 
 left vid at: 1:50:54
