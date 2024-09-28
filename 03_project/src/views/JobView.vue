@@ -1,6 +1,7 @@
 <script setup>
 import { RouterLink } from 'vue-router';
 </script>
+
 <template>
   <section>
     <div class="container m-auto py-6 px-6">

@@ -525,10 +525,18 @@ import { RouterLink } from 'vue-router';
 }
 ```
 
-# 17. JobView component
+# 17. JobView component and route
 - added `views/JobView.vue`
 - copied over HTML from design
 - imported RouterLink and changed links to use this instead
+- imported the view and added route | we use `/:id` in the path to route to a dynamic id
+```JS router/index.js
+{
+  path: '/jobs/:id',
+  name: 'job',
+  component: JobView
+},
+```
 
 
 
