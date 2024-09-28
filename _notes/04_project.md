@@ -647,6 +647,46 @@ npm i vue-spinner
 </div>
 ``` 
 
+# 23. Displaying data in JobView
+- imported Axios, PulseLoader and reactive and useRoute
+- we declare a constant for route
+- we declare a constant for the `jobId` with the param value of the id of the page
+- we declare a reactive state which holds the job and isLoading fields
+- we specify an async function in onMounted to get the job data
+- we use v-if and v-else to display the spinner or render the data
+- we changed the hard coded values to reference the state fields instead
+
+```Vue vies/JobView.vue
+<script setup>
+import PulseLoader from 'vue-spinner/src/PulseLoader.vue';
+import { reactive, onMounted } from 'vue';
+import { useRoute, RouterLink } from 'vue-router';
+import axios from 'axios';
+
+const route = useRoute();
+
+const jobId = route.params.id;
+
+const state = reactive({
+  job: {},
+  isLoading: true
+});
+
+onMounted(async() => {
+  try{
+    const response = await axios(`http://localhost:5000/jobs/${jobId}`)
+    state.job = response.data;
+  } catch(error){
+    console.log('Error fetching job', error);
+  } finally {
+    state.isLoading = false;
+  }
+});
+</script>
+```
+
+
+
 
 left vid at: 1:50:54
 
