@@ -539,7 +539,24 @@ import { RouterLink } from 'vue-router';
 ```
 
 # 18. Implement JSON server to serve data
-
+to install:
+``` shell
+npm i json-server
+```
+- JSON Server serves a JSON file that you specify in package.json
+  - you also specify a port
+- modified jobs.json to have jobs as a key in an object
+``` JSON jobs.json
+{
+  "jobs": [
+    // jobs data
+  ]
+}
+```
+- added a server script to package.json
+```js package.json
+"server": "json-server --watch src/jobs.json --port 5000"
+```
 
 
 
