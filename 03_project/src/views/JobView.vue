@@ -24,6 +24,14 @@ onMounted(async() => {
     state.isLoading = false;
   }
 });
+
+const handleDelete = () => {
+  try{
+    const response = axios.delete(`/api/jobs/${jobId}`);
+  } catch(error){
+    console.log('error deleting job', error);
+  }
+};
 </script>
 
 <template>
@@ -43,9 +51,7 @@ onMounted(async() => {
               <div
                 class="text-gray-500 mb-4 flex align-middle justify-center md:justify-start"
               >
-                <i
-                  class="fa-solid fa-location-dot text-lg text-orange-700 mr-2"
-                ></i>
+              <i class="pi pi-map-marker text-orange-700 mr-2 text-xl"></i>
                 <p class="text-orange-700">{{ state.job.location }}</p>
               </div>
             </div>
@@ -99,6 +105,7 @@ onMounted(async() => {
                 >Edit Job
               </RouterLink>
               <button
+                @click="handleDelete"
                 class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline mt-4 block"
               >
                 Delete Job

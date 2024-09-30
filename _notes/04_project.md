@@ -718,7 +718,7 @@ server: {
 },
 ```
 
-# form data
+# 26. form data
 - using a reactive state for this
 ```JS AddJobView.vue
 import { reactive } from 'vue';
@@ -764,6 +764,20 @@ const handleSubmit = async() => {
   }
 }
 ```
+
+# 27. Job Delete Request 
+- added `handleDelete` async function to `JobView.vue`
+``` JS JobView.vue
+const handleDelete = () => {
+  try{
+    const response = axios.delete(`/api/jobs/${jobId}`);
+  } catch(error){
+    console.log('error deleting job', error);
+  }
+};
+```
+- bounded the delete button this this method.
+
 
 left vid at: 02:13:45
 
