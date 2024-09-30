@@ -685,12 +685,13 @@ onMounted(async() => {
 </script>
 ```
 
-# BackButton Component
+# 24. BackButton Component
 - changed href to go to '/job'
 - changed the font awesome icon to `pi pi-arrow left`
 - copied the code over to `components/BackButton.vue`
 - imported and displayed in `views/JobView.vue`
 
+# 25. Proxying
 
 
 
