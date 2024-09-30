@@ -3,6 +3,7 @@ import PulseLoader from 'vue-spinner/src/PulseLoader.vue';
 import { reactive, onMounted } from 'vue';
 import { useRoute, RouterLink } from 'vue-router';
 import axios from 'axios';
+import BackButton from '@/components/BackButton.vue';
 
 const route = useRoute();
 
@@ -20,25 +21,15 @@ onMounted(async() => {
   } catch(error){
     console.log('Error fetching job', error);
   } finally {
-    state.isLoading = false;
+    state.isLoading = true;
   }
 });
 </script>
 
 <template>
-  <section>
-    <div class="container m-auto py-6 px-6">
-      <RouterLink
-        to="/jobs"
-        class="text-green-500 hover:text-green-600 flex items-center"
-      >
-        <i class="fas fa-arrow-left mr-2"></i> Back to Job Listings
-      </RouterLink>
-    </div>
-  </section>
-
+  <BackButton />
   <section class="bg-green-50">
-      <div v-if="state.isLoading" class="container m-auto py-10 px-6">
+      <div v-if="state.isLoading" class="container text-center m-auto py-10 px-6">
         <PulseLoader />
       </div>
       <div v-else class="container m-auto py-10 px-6">
