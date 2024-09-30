@@ -718,6 +718,52 @@ server: {
 },
 ```
 
+# form data
+- using a reactive state for this
+```JS AddJobView.vue
+import { reactive } from 'vue';
+const form = reactive({
+  type: 'Full-Time',
+  title: '',
+  description: '',
+  salary: '',
+  location: '',
+  company: {
+    name: '',
+    description: '',
+    contactEmail: '',
+    contactPhone: '' 
+  }
+});
+```
+- we then use `v-model="form.type"` (for example) to bind the form inputs to the form state
+- we then added a `handleSubmit` method and called this on the form using `@submit.prevent="handleSubmit"`
+- the handleSubmit method uses an async callback in which an axios post request is sent
+``` JS AddJobView.vue
+const handleSubmit = async() => {
+  const newJob = {
+    title: form.title,
+    type: form.type,
+    location: form.location,
+    description: form.description,
+    salary: form.salary,
+    company: {
+      name: form.company.name,
+      description: form.company.description,
+      contactEmail: form.company.contactEmail,
+      contactPhone: form.company.contactPhone
+    }
+  }
+  try{
+    const response = await axios.post(`/api/jobs`, newJob);
+    // @ todo - show toast
+    router.push(`/jobs/${response.data.id}`);
+  } catch(error){
+    // @ todo - show toast
+    console.log('error submitting new job', error);
+  }
+}
+```
 
 left vid at: 02:13:45
 
