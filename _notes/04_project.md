@@ -707,7 +707,16 @@ server: {
 ```
 - modified get urls to `/api/`/
 
-
+# 25. Add Job Page
+- copied over the HTML from the design to `views/AddJobView.vue`
+- added a route to `routes/index.js`
+``` js
+{
+  path: '/jobs/add',
+  name: 'add-job',
+  component: AddJobView
+},
+```
 
 
 left vid at: 02:13:45

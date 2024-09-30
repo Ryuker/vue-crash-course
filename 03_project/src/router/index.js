@@ -17,16 +17,16 @@ const router = createRouter({
       path: '/jobs',
       name: 'Jobs',
       component: JobsView,
-      // {
-      //   path: '/add-job',
-      //   name: 'Add Job',
-      //   component: AddJobView
-      // }
     },
     {
       path: '/jobs/:id',
       name: 'job',
       component: JobView
+    },
+    {
+      path: '/jobs/add',
+      name: 'add-job',
+      component: AddJobView
     },
     {
       path: '/:catchAll(.*)',
