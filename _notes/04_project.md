@@ -692,6 +692,19 @@ onMounted(async() => {
 - imported and displayed in `views/JobView.vue`
 
 # 25. Proxying
+- specified a proxy in `vite.config.js`
+``` js vite.config.js
+server: {
+  // other code
+  proxy: {
+    '/api': {
+      target: 'http://localhost:8000',
+      changeOrigin: true,
+      rewrite: (path) => path.replace(/^\/api/, '')
+    }
+  }
+}
+```
 
 
 
