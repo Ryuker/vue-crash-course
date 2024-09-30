@@ -778,6 +778,9 @@ const handleDelete = () => {
 ```
 - bounded the delete button this this method.
 
+# 28. Toast popup display 
+- displayed when submitting a post, put or delete request to the server
+
 
 left vid at: 02:13:45
 
