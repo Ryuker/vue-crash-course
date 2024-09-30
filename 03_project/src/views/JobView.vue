@@ -16,12 +16,12 @@ const state = reactive({
 
 onMounted(async() => {
   try{
-    const response = await axios(`http://localhost:5000/jobs/${jobId}`)
+    const response = await axios(`/api/jobs/${jobId}`)
     state.job = response.data;
   } catch(error){
     console.log('Error fetching job', error);
   } finally {
-    state.isLoading = true;
+    state.isLoading = false;
   }
 });
 </script>
