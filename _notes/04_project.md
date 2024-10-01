@@ -765,20 +765,7 @@ const handleSubmit = async() => {
 }
 ```
 
-# 27. Job Delete Request 
-- added `handleDelete` async function to `JobView.vue`
-``` JS JobView.vue
-const handleDelete = () => {
-  try{
-    const response = axios.delete(`/api/jobs/${jobId}`);
-  } catch(error){
-    console.log('error deleting job', error);
-  }
-};
-```
-- bounded the delete button this this method.
-
-# 28. Toast popup display 
+# 27. Toast popup display 
 - displayed when submitting a post, put or delete request to the server
 - to install:
 ``` shell
@@ -810,6 +797,40 @@ try{
     toast.error('Job was not added');
   }
 ```
+
+# 28. Job Delete Request 
+- imported `useRouter` and `useToast`
+- initialized instances for them.
+- 
+``` JS JobView.vue
+const router = useRouter();
+const toast = useToast();
+```
+- added `handleDelete` async function to `JobView.vue`
+  - displays a confirmation popup to confirm user wants to delete the job
+  - if yes:
+    - sends delete request with axios
+    - trigger toast display with success message
+    - reroutes to the jobs page
+  - if there's an error we display the job wasn't deleted and log the error.
+``` JS JobView.vue
+const handleDelete = async() => {
+  try{
+    const confirm = window.confirm('Are you sure you want to delete this job?');
+    if(confirm) {
+      await axios.delete(`/api/jobs/${jobId}`);
+      toast.success('Job deleted successfully');
+      router.push('/jobs');
+    }
+  } catch(error){
+    console.log('error deleting job', error);
+    toast.error(`Job not deleted`, );
+  }
+};
+```
+- bounded the delete button this this method.
+
+
 
 
 left vid at: 02:37:25
