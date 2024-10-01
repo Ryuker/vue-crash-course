@@ -830,6 +830,19 @@ const handleDelete = async() => {
 ```
 - bounded the delete button this this method.
 
+# 29. Edit Job View
+- added `views/EditJobView.vue` with basic template
+- specified dynamic route using id in `router/index.js`
+``` JS router/index.js
+{
+  path: '/jobs/edit/:id',
+  name: 'edit-job',
+  component: EditJobView
+},
+```
+- modified `views/JobView.vue` with an edit button
+- this routes to `jobs/edit/${jobId}`
+
 
 
 
