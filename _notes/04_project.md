@@ -784,7 +784,13 @@ const handleDelete = () => {
 ``` shell
 npm i vue-toastification@next
 ```
-
+## usage
+- imported package into main.js
+- we import the styles as well.
+```JS main.js
+import Toast from 'vue-toastification';
+import 'vue-toastification/dist/index.css';
+```
 
 
 left vid at: 02:37:25
