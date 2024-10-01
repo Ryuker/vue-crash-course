@@ -780,6 +780,11 @@ const handleDelete = () => {
 
 # 28. Toast popup display 
 - displayed when submitting a post, put or delete request to the server
+- to install:
+``` shell
+npm i vue-toastification@next
+```
+
 
 
 left vid at: 02:37:25
