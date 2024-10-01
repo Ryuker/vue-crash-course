@@ -842,9 +842,100 @@ const handleDelete = async() => {
 ```
 - modified `views/JobView.vue` with an edit button
 - this routes to `jobs/edit/${jobId}`
+- copied over form from AddJobView and changed `Add` to `Update` on the button and title
+- imported and rendered back button in template
+- imports
+``` JS views/EditJobView.vue
+import router from '@/router';
+import PulseLoader from 'vue-spinner/src/PulseLoader.vue';
+import { useRoute } from 'vue-router';
+import axios from 'axios';
+import { onMounted, reactive } from 'vue';
+import { useToast } from 'vue-toastification';
+import BackButton from '@/components/BackButton.vue';
+```
+- declared variables for router and jobId 
+``` JS EditJobView.vue
+const route = useRoute();
+const toast = useToast();
 
+const jobId = route.params.id;
+```
 
+- declared a reactive state for the job
+``` JS EditJobView
+const state = reactive({
+  job: {},
+  isLoading: true
+});
+```
 
+- declared reactive form
+``` JS EditJobView.vue
+const form = reactive({
+  type: '',
+  title: '',
+  description: '',
+  salary: '',
+  location: '',
+  company: {
+    name: '',
+    description: '',
+    contactEmail: '',
+    contactPhone: '' 
+  }
+});
+```
+
+- added handleSubmit function
+``` JS views/EditJobView.vue
+const handleSubmit = async() => {
+  const updatedJob = {
+    title: form.title,
+    type: form.type,
+    location: form.location,
+    description: form.description,
+    salary: form.salary,
+    company: {
+      name: form.company.name,
+      description: form.company.description,
+      contactEmail: form.company.contactEmail,
+      contactPhone: form.company.contactPhone
+    }
+  }
+  try{
+    const response = await axios.put(`/api/jobs/${jobId}`, updatedJob);
+    toast.success('Job updated successfully');
+    router.push(`/jobs/${response.data.id}`);
+  } catch(error){
+    console.log('error updating job', error);
+    toast.error('Job was not updated');
+  }
+}
+```
+- called OnMounted to fetch the job using axios and populate the form
+``` JS views/EditJobView.vue
+onMounted(async() => {
+  try{
+    const response = await axios(`/api/jobs/${jobId}`)
+    state.job = response.data;
+    
+    form.type = state.job.type;
+    form.title = state.job.title;
+    form.description = state.job.description;
+    form.salary = state.job.salary;
+    form.location = state.job.location;
+    form.company.name = state.job.company.name;
+    form.company.description = state.job.company.description;
+    form.company.contactEmail = state.job.company.contactEmail;
+    form.company.contactPhone = state.job.company.contactPhone;
+  } catch(error){
+    console.log('Error fetching job', error);
+  } finally {
+    state.isLoading = false;
+  }
+});
+```
 
 left vid at: 02:37:25
 

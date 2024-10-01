@@ -99,18 +99,18 @@
       }
     },
     {
-      "id": "fcbb",
-      "title": "Fullstack developer",
+      "title": "Fullstack dev",
       "type": "Full-Time",
       "location": "Amsterdam",
       "description": "accaacac",
-      "salary": "$50K - $60K",
+      "salary": "$100K - $125K",
       "company": {
         "name": "VueJobs",
         "description": "acacaca",
         "contactEmail": "info@vuejobs.com",
         "contactPhone": "06-1726717171"
-      }
+      },
+      "id": "fcbb"
     }
   ]
 }
