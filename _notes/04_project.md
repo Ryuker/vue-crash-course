@@ -937,5 +937,10 @@ onMounted(async() => {
 });
 ```
 
+- We know have full CRUD functionality
+
+# 30. Deployment
+- The Crash Course deploys to Netlify, but not sure I want to do that.
+
 left vid at: 02:37:25
 
