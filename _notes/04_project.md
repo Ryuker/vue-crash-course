@@ -791,6 +791,10 @@ npm i vue-toastification@next
 import Toast from 'vue-toastification';
 import 'vue-toastification/dist/index.css';
 ```
+- we then specify to use it as middleware in the app
+``` JS main.js
+app.use(Toast);
+```
 
 
 left vid at: 02:37:25
