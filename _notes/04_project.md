@@ -795,6 +795,21 @@ import 'vue-toastification/dist/index.css';
 ``` JS main.js
 app.use(Toast);
 ```
+## displaying Toast in AddJobView
+- added following lines to display the toast when the Job has been added successfully or there was an error
+``` JS view/AddJobView.vue
+import { useToast } from 'vue-toastification';
+
+// other code
+try{
+    const response = await axios.post(`/api/jobs`, newJob);
+    toast.success('Job added successfully');
+    router.push(`/jobs/${response.data.id}`);
+  } catch(error){
+    console.log('error submitting new job', error);
+    toast.error('Job was not added');
+  }
+```
 
 
 left vid at: 02:37:25

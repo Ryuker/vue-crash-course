@@ -97,6 +97,62 @@
         "contactEmail": "info@vuejobs.com",
         "contactPhone": "06-1227182712"
       }
+    },
+    {
+      "id": "fcbb",
+      "title": "Fullstack developer",
+      "type": "Full-Time",
+      "location": "Amsterdam",
+      "description": "accaacac",
+      "salary": "$50K - $60K",
+      "company": {
+        "name": "VueJobs",
+        "description": "acacaca",
+        "contactEmail": "info@vuejobs.com",
+        "contactPhone": "06-1726717171"
+      }
+    },
+    {
+      "id": "b975",
+      "title": "Fullstack developer",
+      "type": "Full-Time",
+      "location": "Amsterdam",
+      "description": "acjachjabjchbahjcbha",
+      "salary": "$50K - $60K",
+      "company": {
+        "name": "VueJobs",
+        "description": "cnjkancjanjkcjanc",
+        "contactEmail": "info@vuejobs.com",
+        "contactPhone": "06126353527"
+      }
+    },
+    {
+      "id": "efb5",
+      "title": "Backend Dev",
+      "type": "Full-Time",
+      "location": "Amsterdam",
+      "description": "ahbchachba",
+      "salary": "$60K - $70K",
+      "company": {
+        "name": "VueJobs",
+        "description": "bchbahbcabjcakjcjakbc",
+        "contactEmail": "info@vuejobs.com",
+        "contactPhone": "0617172828"
+      }
+    },
+    {
+      "id": "34aa",
+      "title": "Fullstack developer",
+      "type": "Full-Time",
+      "location": "Amsterdam",
+      "description": "abahbchjabchja",
+      "salary": "Under $50K",
+      "company": {
+        "name": "VueJobs",
+        "description": "ackackamkcmakmc",
+        "contactEmail": "info@vuejobs.com",
+        "contactPhone": "0618282919"
+      }
     }
   ]
 }
