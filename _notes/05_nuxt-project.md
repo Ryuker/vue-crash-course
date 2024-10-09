@@ -8,6 +8,7 @@ TODO:
 - [] convert views to pages
 - [] convert components
 - [] convert mock data to be served by nuxt api
+- [] install and configure json-webserver setup to serves as external api to get the data from
 
 - [] install toast
 - [] install prime icons
