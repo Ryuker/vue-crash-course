@@ -7,8 +7,13 @@ TODO:
 - [v] configure Tailwind
 - [] convert views to pages
 - [] convert components
-- [] convert mock data to be served by nuxt api
+
 - [] install and configure json-webserver setup to serves as external api to get the data from
+  - [] convert mock data to be served by nuxt api
+
+- [v] add and populate api routes
+  [v] single dynamic api job route by id
+  [v] all jobs request 
 
 - [] install toast
 - [] install prime icons
