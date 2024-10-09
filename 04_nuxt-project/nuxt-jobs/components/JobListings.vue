@@ -1,5 +1,10 @@
 <script setup>
 
+const state = reactive({
+  jobs: [],
+  isLoading: true
+});
+
 defineProps({
   limit: {
     type: Number,
