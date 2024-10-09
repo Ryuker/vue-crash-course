@@ -3,8 +3,8 @@
 
 
 TODO:
-- [] install Tailwind
-- [] configure Tailwind
+- [v] install Tailwind
+- [v] configure Tailwind
 - [] convert views to pages
 - [] convert components
 - [] convert mock data to be served by nuxt api
