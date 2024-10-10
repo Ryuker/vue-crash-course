@@ -17,3 +17,5 @@ TODO:
 
 - [] install toast
 - [] install prime icons
+
+- [] install pulse loader
