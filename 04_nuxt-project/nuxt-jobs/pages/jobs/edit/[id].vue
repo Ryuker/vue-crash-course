@@ -42,12 +42,15 @@ const handleSubmit = async() => {
     }
   }
   try{
-    const response = await axios.put(`/api/jobs/${jobId}`, updatedJob);
-    toast.success('Job updated successfully');
-    router.push(`/jobs/${response.data.id}`);
+    const { data: job } = await useFetch(`/api/jobs/${jobId}`, {
+      method: 'PUT',
+      body: { updatedJob }
+    });
+    // toast.success('Job updated successfully');
+    router.push(`/jobs/${job.value.id}`);
   } catch(error){
     console.log('error updating job', error);
-    toast.error('Job was not updated');
+    // toast.error('Job was not updated');
   }
 }
 
