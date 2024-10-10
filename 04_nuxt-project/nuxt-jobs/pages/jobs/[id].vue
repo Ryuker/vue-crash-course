@@ -1,8 +1,127 @@
 <script setup>
+// import PulseLoader from 'vue-spinner/src/PulseLoader.vue';
+// import { useToast } from 'vue-toastification';
+import BackButton from '@/components/BackButton.vue';
+
+// const route = useRoute();
+// const router = useRouter();
+// const toast = useToast();
+
 const { id } = useRoute().params;
 
+const state = reactive({
+  job: {},
+  isLoading: true
+});
+
+const handleDelete = async() => {
+  console.log('Deleting post');
+  // try{
+  //   const confirm = window.confirm('Are you sure you want to delete this job?');
+  //   if(confirm) {
+  //     await axios.delete(`/api/jobs/${id}`);
+  //     // toast.success('Job deleted successfully');
+  //     // router.push('/jobs');
+  //   }
+  // } catch(error){
+  //   console.log('error deleting job', error);
+  //   // toast.error(`Job not deleted`, );
+  // }
+};
+
+
+try{
+  const {data: job} = await useFetch(`/api/jobs/${id}`)
+  console.log('job:', job);
+  state.job = job;
+  console.log(state.job);
+} catch(error){
+  console.log('Error fetching job', error);
+} finally {
+  state.isLoading = false;
+}
 </script>
 
 <template>
-  <h1>Dynamic Job Page for each {{ id }}</h1>
+  <BackButton />
+  <section class="bg-green-50">
+      <div v-if="state.isLoading" class="container text-center m-auto py-10 px-6">
+        <!-- <PulseLoader /> -->
+      </div>
+      <div v-else class="container m-auto py-10 px-6">
+        <div class="grid grid-cols-1 md:grid-cols-70/30 w-full gap-6">
+          <main>
+            <div
+              class="bg-white p-6 rounded-lg shadow-md text-center md:text-left"
+            >
+              <div class="text-gray-500 mb-4">{{ state.job.type }}</div>
+              <h1 class="text-3xl font-bold mb-4">{{ state.job.title }}</h1>
+              <div
+                class="text-gray-500 mb-4 flex align-middle justify-center md:justify-start"
+              >
+              <i class="pi pi-map-marker text-orange-700 mr-2 text-xl"></i>
+                <p class="text-orange-700">{{ state.job.location }}</p>
+              </div>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow-md mt-6">
+              <h3 class="text-green-800 text-lg font-bold mb-6">
+                Job Description
+              </h3>
+
+              <p class="mb-4">
+                {{ state.job.description }}
+              </p>
+
+              <h3 class="text-green-800 text-lg font-bold mb-2">Salary</h3>
+
+              <p class="mb-4">{{ state.job.salary}} / Year</p>
+            </div>
+          </main>
+
+          <!-- Sidebar -->
+          <aside>
+            <!-- Company Info -->
+            <div class="bg-white p-6 rounded-lg shadow-md">
+              <h3 class="text-xl font-bold mb-6">Company Info</h3>
+
+              <h2 class="text-2xl">{{ state.job.company.name}}</h2>
+
+              <p class="my-2">
+                {{ state.job.company.description }}
+              </p>
+
+              <hr class="my-4" />
+
+              <h3 class="text-xl">Contact Email:</h3>
+
+              <p class="my-2 bg-green-100 p-2 font-bold">
+                {{ state.job.company.contactEmail }}
+              </p>
+
+              <h3 class="text-xl">Contact Phone:</h3>
+
+              <p class="my-2 bg-green-100 p-2 font-bold">{{ state.job.company.contactPhone }}</p>
+            </div>
+
+            <!-- Manage -->
+            <div class="bg-white p-6 rounded-lg shadow-md mt-6">
+              <h3 class="text-xl font-bold mb-6">Manage Job</h3>
+              <RouterLink
+                :to="`/jobs/edit/${jobId}`"
+                class="bg-green-500 hover:bg-green-600 text-white text-center font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline mt-4 block"
+                >Edit Job
+              </RouterLink>
+              <button
+                @click="handleDelete"
+                class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline mt-4 block"
+              >
+                Delete Job
+              </button>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
 </template>
