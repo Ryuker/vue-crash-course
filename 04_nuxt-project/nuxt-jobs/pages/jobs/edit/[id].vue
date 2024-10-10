@@ -6,7 +6,7 @@ import BackButton from '@/components/BackButton.vue';
 // const route = useRoute();
 // const toast = useToast();
 
-const { id } = useRoute().params;
+const { id: jobId } = useRoute().params;
 
 const state = reactive({
   job: {},
@@ -53,8 +53,8 @@ const handleSubmit = async() => {
 
 
 try{
-  const response = await useFetch(`/api/jobs/${jobId}`)
-  state.job = response.data;
+  const { data: job } = await useFetch(`/api/jobs/${jobId}`)
+  state.job = job.value;
   
   form.type = state.job.type;
   form.title = state.job.title;
