@@ -1,3 +1,3 @@
 <template>
-  <h1>Jobs Page</h1>
+  <JobListings />
 </template>
