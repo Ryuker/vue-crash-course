@@ -7,7 +7,7 @@ import BackButton from '@/components/BackButton.vue';
 // const router = useRouter();
 // const toast = useToast();
 
-const { id } = useRoute().params;
+const { id: jobId } = useRoute().params;
 
 const state = reactive({
   job: {},
@@ -31,7 +31,7 @@ const handleDelete = async() => {
 
 
 try{
-  const {data: job} = await useFetch(`/api/jobs/${id}`)
+  const {data: job} = await useFetch(`/api/jobs/${jobId}`)
   state.job = job;
 } catch(error){
   console.log('Error fetching job', error);
