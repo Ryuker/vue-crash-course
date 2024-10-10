@@ -32,9 +32,7 @@ const handleDelete = async() => {
 
 try{
   const {data: job} = await useFetch(`/api/jobs/${id}`)
-  console.log('job:', job);
   state.job = job;
-  console.log(state.job);
 } catch(error){
   console.log('Error fetching job', error);
 } finally {
