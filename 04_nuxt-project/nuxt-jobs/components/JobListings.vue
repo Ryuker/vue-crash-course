@@ -16,18 +16,30 @@ defineProps({
   }
 })
 
-onMounted(async () => {
-  try{
-    const response = await useFetch('/api/jobs');
-    // jobs.value = response.data;
-    state.jobs = response.data;
-    console.log(state.jobs);
-  } catch(error){
-    console.error('Error fetching jobs', error);
-  } finally {
-    state.isLoading = false;
-  }
-});
+// Load jobs from Nuxt API
+try {
+  const { data: jobs } = await useFetch('/api/jobs');
+  state.jobs = jobs;
+  console.log(state.jobs);
+} catch(error){
+  console.error('Error fetching jobs', error);
+} finally {
+  state.isLoading = false;
+}
+
+// onMounted(async () => {
+//   try{
+//     const { data: jobs } = await useFetch('/api/jobs');
+//     // jobs.value = response.data;
+//     console.log(jobs);
+//     state.jobs = jobs;
+//     console.log(state.jobs);
+//   } catch(error){
+//     console.error('Error fetching jobs', error);
+//   } finally {
+//     state.isLoading = false;
+//   }
+// });
 </script>
 
 <template>
