@@ -20,7 +20,6 @@ defineProps({
 try {
   const { data: jobs } = await useFetch('/api/jobs');
   state.jobs = jobs;
-  console.log(state.jobs);
 } catch(error){
   console.error('Error fetching jobs', error);
 } finally {
