@@ -23,3 +23,6 @@ TODO:
 - [] install prime icons
 
 - [] install pulse loader
+
+
+deployment: [explained](https://github.com/lucpotage/nuxt-github-pages)
