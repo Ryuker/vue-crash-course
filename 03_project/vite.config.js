@@ -8,6 +8,7 @@ export default defineConfig({
   plugins: [
     vue(),
   ],
+  base: "/vue-crash-course/",
   server: {
     port: 3000,
     proxy: {
