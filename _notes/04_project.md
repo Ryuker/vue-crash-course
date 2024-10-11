@@ -942,5 +942,7 @@ onMounted(async() => {
 # 30. Deployment
 - The Crash Course deploys to Netlify, but not sure I want to do that.
 
+- [deployment to GH Pages](https://mkay11.medium.com/how-to-deploy-your-vite-vue-3-application-in-github-pages-2023-2b842f50576a)
+
 left vid at: 02:37:25
 
