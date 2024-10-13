@@ -29,5 +29,9 @@ TODO:
 
 - [] install pulse loader
 
+- [] implement error page
+- [] implement catch all route
+- [] 
+
 
 deployment: [explained](https://github.com/lucpotage/nuxt-github-pages)
