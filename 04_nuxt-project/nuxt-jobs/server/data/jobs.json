@@ -267,18 +267,18 @@
       }
     },
     {
-      "id": "a320",
       "title": "Fullstack developer",
       "type": "Full-Time",
       "location": "Amsterdam",
-      "description": "ncjnsjdnjsnjsnjdvnjsvjnsvs",
+      "description": "Updated description once more",
       "salary": "$150K - $175K",
       "company": {
         "name": "VueJobs",
         "description": "jksksnjvsdjvnjsnvjsnjvnsv",
         "contactEmail": "info@vuejobs.com",
         "contactPhone": "0617272838383"
-      }
+      },
+      "id": "a320"
     }
   ]
 }
