@@ -1,5 +1,5 @@
 <script setup>
-// import PulseLoader from 'vue-spinner/src/PulseLoader.vue';
+import PulseLoader from 'vue-spinner/src/PulseLoader.vue';
 import { useToast } from 'vue-toastification';
 import BackButton from '@/components/BackButton.vue';
 
@@ -80,7 +80,7 @@ try{
   <BackButton />
  <section class="bg-green-50">
     <div v-if="state.isLoading" class="container text-center m-auto py-10 px-6">
-      <!-- <PulseLoader /> -->
+      <PulseLoader />
     </div>
     <div v-else class="container m-auto max-w-2xl py-24">
       <div
