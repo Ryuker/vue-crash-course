@@ -1,5 +1,5 @@
 <script setup>
-
+import PulseLoader from 'vue-spinner/src/PulseLoader.vue';
 const state = reactive({
   jobs: [],
   isLoading: true
@@ -49,7 +49,7 @@ try {
       </h2>
       <!-- Show loading spinner while loading is true -->
       <div v-if="state.isLoading" class="text-center text-gray-500 py-6">
-        <!-- <PulseLoader /> -->
+        <PulseLoader />
       </div>
       <!-- Show job listing when done loading -->
       <div v-else class="grid grid-cols-1 md:grid-cols-3 gap-6">

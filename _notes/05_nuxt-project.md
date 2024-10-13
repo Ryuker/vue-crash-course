@@ -31,7 +31,7 @@ TODO:
 - [v] install toastification
 - [v] install prime icons
 
-- [] install pulse loader
+- [v] install pulse loader
 
 
 deployment: [explained](https://github.com/lucpotage/nuxt-github-pages)
