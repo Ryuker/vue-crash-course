@@ -1,0 +1,9 @@
+---
+import Layout from "@layouts/layout.astro"
+
+const { jobId } = Astro.params;
+---
+
+<Layout title="Astro Job">
+  <h1>Dynamic Job Info Page for JobId: { jobId }</h1>
+</Layout>

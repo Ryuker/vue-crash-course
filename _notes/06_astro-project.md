@@ -6,12 +6,21 @@
 # Todo:
 [v] install Astro, setup new project
 [v] install and configure Tailwind
-[] setup default layout
-[] setup pages
+[v] setup default layout
+  [] styling
+[v] setup pages
   [] jobs page
+    [] skeleton
+    [] styling
   [] add jobs page
+    [] skeleton
+    [] styling
   [] dynamic job page
+    [] skeleton
+    [] styling
   [] edit job page
+    [] skeleton
+    [] styling
 
 [] setup API routes to get data
   [] 
