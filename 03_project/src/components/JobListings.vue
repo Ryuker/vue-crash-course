@@ -51,8 +51,8 @@ onMounted(async () => {
             <JobListing v-for="job in state.jobs.slice(0, limit || state.jobs.length)" :key="job.id" :job="job"/>
         </div>
       </div>
-    </section>
-    <section class="m-auto max-w-lg my-10 px-6">
+  </section>
+  <section class="m-auto max-w-lg my-10 px-6">
     <RouterLink v-if="showButton"
       to="/jobs"
       class="block bg-black text-white text-center py-4 px-6 rounded-xl hover:bg-gray-700"
