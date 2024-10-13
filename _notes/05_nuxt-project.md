@@ -28,12 +28,10 @@ TODO:
 
 - [v] implement error page
 
-- [] install toast
-- [] install prime icons
+- [v] install toastification
+- [v] install prime icons
 
 - [] install pulse loader
-
-- [] 
 
 
 deployment: [explained](https://github.com/lucpotage/nuxt-github-pages)

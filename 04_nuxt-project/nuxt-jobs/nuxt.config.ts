@@ -6,4 +6,7 @@ export default defineNuxtConfig({
   css: [
     "primeicons/primeicons.css"
   ],
+  build: {
+    transpile: ['vue-toastification'],
+  }
 })

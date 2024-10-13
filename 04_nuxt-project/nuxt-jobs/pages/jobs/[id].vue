@@ -1,11 +1,11 @@
 <script setup>
 // import PulseLoader from 'vue-spinner/src/PulseLoader.vue';
-// import { useToast } from 'vue-toastification';
+import { useToast } from 'vue-toastification';
 import BackButton from '@/components/BackButton.vue';
 
 // const route = useRoute();
 const router = useRouter();
-// const toast = useToast();
+const toast = useToast();
 
 const { id: jobId } = useRoute().params;
 
@@ -22,12 +22,12 @@ const handleDelete = async() => {
       await useFetch(`/api/jobs/${jobId}`, {
         method: 'DELETE'
       });
-      // toast.success('Job deleted successfully');
+      toast.success('Job deleted successfully');
       router.push('/jobs');
     }
   } catch(error){
     console.log('error deleting job', error);
-    // toast.error(`Job not deleted`, );
+    toast.error(`Job not deleted`, );
   }
 };
 

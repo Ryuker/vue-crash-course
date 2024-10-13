@@ -1,10 +1,10 @@
 <script setup>
 // import PulseLoader from 'vue-spinner/src/PulseLoader.vue';
-// import { useToast } from 'vue-toastification';
+import { useToast } from 'vue-toastification';
 import BackButton from '@/components/BackButton.vue';
 
 const router = useRouter();
-// const toast = useToast();
+const toast = useToast();
 
 const { id: jobId } = useRoute().params;
 
@@ -46,11 +46,11 @@ const handleSubmit = async() => {
       method: 'PUT',
       body: { updatedJob }
     });
-    // toast.success('Job updated successfully');
+    toast.success('Job updated successfully');
     router.push(`/jobs/${job.value.id}`);
   } catch(error){
     console.log('error updating job', error);
-    // toast.error('Job was not updated');
+    toast.error('Job was not updated');
   }
 }
 
