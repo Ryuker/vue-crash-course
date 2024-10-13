@@ -4,7 +4,7 @@
 import BackButton from '@/components/BackButton.vue';
 
 // const route = useRoute();
-// const router = useRouter();
+const router = useRouter();
 // const toast = useToast();
 
 const { id: jobId } = useRoute().params;
@@ -16,17 +16,19 @@ const state = reactive({
 
 const handleDelete = async() => {
   console.log('Deleting post');
-  // try{
-  //   const confirm = window.confirm('Are you sure you want to delete this job?');
-  //   if(confirm) {
-  //     await axios.delete(`/api/jobs/${id}`);
-  //     // toast.success('Job deleted successfully');
-  //     // router.push('/jobs');
-  //   }
-  // } catch(error){
-  //   console.log('error deleting job', error);
-  //   // toast.error(`Job not deleted`, );
-  // }
+  try{
+    const confirm = window.confirm('Are you sure you want to delete this job?');
+    if(confirm) {
+      await useFetch(`/api/jobs/${jobId}`, {
+        method: 'DELETE'
+      });
+      // toast.success('Job deleted successfully');
+      router.push('/jobs');
+    }
+  } catch(error){
+    console.log('error deleting job', error);
+    // toast.error(`Job not deleted`, );
+  }
 };
 
 
