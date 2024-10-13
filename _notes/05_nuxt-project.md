@@ -19,18 +19,20 @@ TODO:
   - - [v] test put event
   - [v] implement delete request handler
     - [v] test the functionality
+  - [v] implement catch all route
 
 - [v] add and populate api routes
   [v] single dynamic api job route by id
   [v] all jobs request 
+
+
+- [v] implement error page
 
 - [] install toast
 - [] install prime icons
 
 - [] install pulse loader
 
-- [] implement error page
-- [] implement catch all route
 - [] 
 
 
