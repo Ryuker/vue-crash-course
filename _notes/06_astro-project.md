@@ -4,8 +4,8 @@
 - uses SSR functionality of Astro
 
 # Todo:
-[] install Astro, setup new project
-[] install and configure Tailwind
+[v] install Astro, setup new project
+[v] install and configure Tailwind
 [] setup default layout
 [] setup pages
   [] jobs page
