@@ -4,6 +4,11 @@ import logo from '@assets/img/logo.png';
 
 const currentPath = new URL(Astro.request.url).pathname.slice(1);
 
+// check if active class needs to be set to
+const isCurrentPage = (pagePath: String) => {
+  const classToAdd = currentPath === pagePath ? "active" : "";
+  return classToAdd;
+}
 ---
 
 <nav class="bg-green-700 border-b border-green-500">
@@ -13,22 +18,22 @@ const currentPath = new URL(Astro.request.url).pathname.slice(1);
         class="flex flex-1 items-center justify-center md:items-stretch md:justify-start"
       >
         <!-- Logo -->
-        <a href="/" class=`${currentPath === "" ? "active" : ""} logo flex flex-shrink-0 items-center mr-4`>
+        <a href="/" class=`${isCurrentPage('')} logo flex flex-shrink-0 items-center mr-4`>
           <Image class="h-10 w-auto" src={logo} alt="Vue Jobs" />
           <span class="hidden md:block text-white text-2xl font-bold ml-2">Vue Jobs</span>
         </a>
         <div class="md:ml-auto">
           <div class="flex space-x-2">
             <a href="/"
-              class=`${currentPath === "" ? "active" : ""} hover:bg-gray-900 hover-text-white text-white rounded-md px-3 py-2`>
+              class=`${isCurrentPage('')} hover:bg-gray-900 hover-text-white text-white rounded-md px-3 py-2`>
               Home
             </a>
             <a href="/jobs"
-              class=`${currentPath === "jobs" ? "active" : ""} hover:bg-gray-900 hover-text-white text-white rounded-md px-3 py-2`>
+              class=`${isCurrentPage('jobs')} hover:bg-gray-900 hover-text-white text-white rounded-md px-3 py-2`>
               Jobs
             </a>
             <a href="/jobs/add"
-              class=`${currentPath === "jobs/add" ? "active" : ""} hover:bg-gray-900 hover-text-white text-white rounded-md px-3 py-2`>
+              class=`${isCurrentPage('jobs/add')} hover:bg-gray-900 hover-text-white text-white rounded-md px-3 py-2`>
               Add Job
             </a>
           </div>
