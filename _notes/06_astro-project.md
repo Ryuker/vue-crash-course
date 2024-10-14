@@ -8,6 +8,10 @@
 [v] install and configure Tailwind
 [v] setup default layout
   [] styling
+[v] navbar
+  [] links
+  [v] active link background color
+  [v] prevent background on logo if it's active link
 [v] setup pages
   [] jobs page
     [] skeleton
