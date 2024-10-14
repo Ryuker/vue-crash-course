@@ -19,11 +19,13 @@
     [v] Card
   [] JobListing
     [v] props
-    [] truncated description
-    [] display full description on toggle
+    [v] truncated description (vue component)
+      [v] display full description on toggle
   [] JobListings
     [] load jobs into array from fetch call
-    [] display Job Listing using map function
+    [v] display Job Listing using map function
+    [v] ViewAllJobs button prop and condiditional display
+  [] BackButton
 [v] setup pages
   [] jobs page
     [] skeleton
@@ -31,18 +33,22 @@
   [] add jobs page
     [] skeleton
     [] styling
-  [] dynamic job page
-    [] skeleton
-    [] styling
+  [v] dynamic job page
+    [v] skeleton
+    [v] styling
+    [v] fetch data from API and display
   [] edit job page
     [] skeleton
     [] styling
 
 [] setup API routes to get data
-  [] 
+  [] GET request handler for Dynamic Job ID
+    [v] fetch data from external API or Astro collections?
+    [v] serve data to GET request 
   [] setup request handlers
   [] 
 
 [] install and configure:
+  [v] json-server
   [] toastification
   [] prime icons

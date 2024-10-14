@@ -1,12 +1,6 @@
----
-import JobListing from "./JobListing.astro";
-
-const { limit, showButton } = Astro.props;
-
-const isLoading = false;
-
-const jobsData = [
 {
+  "jobs": [
+    {
       "id": "1",
       "title": "Senior Vue Developer",
       "type": "Full-Time",
@@ -90,40 +84,173 @@ const jobsData = [
         "contactPhone": "555-555-5555"
       }
     },
-];
-
-const jobs = jobsData.slice(0, limit || jobsData.length);
----
-
-<section class="bg-green-50 px-4 py-10">
-  <div class="container-xl lg:container m-auto">
-    <h2 class="text-3xl font-bold text-green-500 mb-6 text-center">
-      Browse Jobs
-    </h2>
-    {isLoading &&  
-      //Show loading spinner while loading is true -->
-      <div class="text-center text-gray-500 py-6">
-        {/* <!-- <PulseLoader /> --> */}
-        <div>Show Pulse Loader</div>
-      </div>
+    {
+      "id": "49e3",
+      "title": "Fullstack developer",
+      "type": "Full-Time",
+      "location": "Amsterdam",
+      "description": "Ajbhbahcbhabchabhbcahbchab",
+      "salary": "$50K - $60K",
+      "company": {
+        "name": "VueJobs",
+        "description": "acbbjajcbajbcjajajcjabjca",
+        "contactEmail": "info@vuejobs.com",
+        "contactPhone": "06172828383"
+      }
+    },
+    {
+      "id": "f923",
+      "title": "Fullstack developer",
+      "type": "Full-Time",
+      "location": "Amsterdam",
+      "description": "abhhabcbahbcahbahbcba",
+      "salary": "$60K - $70K",
+      "company": {
+        "name": "VueJobs",
+        "description": "nancjnjanjcnajcnjajcajnscjanjs",
+        "contactEmail": "info@vuejobs.com",
+        "contactPhone": "061728283"
+      }
+    },
+    {
+      "id": "f248",
+      "title": "Fullstack developer",
+      "type": "Full-Time",
+      "location": "Amsterdam",
+      "description": "njankwjinndjjajncjkansc",
+      "salary": "$80K - $90K",
+      "company": {
+        "name": "VueJobs",
+        "description": "cnaklsmcwhbjajcbhabchbasbahjbsc",
+        "contactEmail": "info@vuejobs.com",
+        "contactPhone": "061722839393"
+      }
+    },
+    {
+      "id": "91f7",
+      "title": "Fullstack developer",
+      "type": "Full-Time",
+      "location": "Amsterdam",
+      "description": "njjcnajjajcanjancjasnjaloremsjbjajknjan",
+      "salary": "$90K - $100K",
+      "company": {
+        "name": "VueJobs",
+        "description": "acnjkancjanjscnajnsjan",
+        "contactEmail": "info@vuejobs.com",
+        "contactPhone": "06171928282"
+      }
+    },
+    {
+      "id": "9700",
+      "title": "Fullstack developer",
+      "type": "Full-Time",
+      "location": "Amsterdam",
+      "description": "najnjancjnjnejnjanjsncjansjca",
+      "salary": "$80K - $90K",
+      "company": {
+        "name": "VueJobs",
+        "description": "acajsncjkneuhacjnscjnajscnjansca",
+        "contactEmail": "info@vuejobs.com",
+        "contactPhone": "061727828282"
+      }
+    },
+    {
+      "id": "a56e",
+      "title": "Fullstack developer",
+      "type": "Full-Time",
+      "location": "Amsterdam",
+      "description": "njajajncjacjajsnjanjncjajsnca",
+      "salary": "$100K - $125K",
+      "company": {
+        "name": "VueJobs",
+        "description": "kjancac ashuhescaksncjanca",
+        "contactEmail": "info@vuejobs.com",
+        "contactPhone": "0617272773"
+      }
+    },
+    {
+      "id": "8246",
+      "title": "Fullstack developer",
+      "type": "Full-Time",
+      "location": "Amsterdam",
+      "description": "Lorem ipsum",
+      "salary": "$150K - $175K",
+      "company": {
+        "name": "VueJobs",
+        "description": "lorem ipsum bahbchabhjab",
+        "contactEmail": "info@vuejobs.com",
+        "contactPhone": "06172728282"
+      }
+    },
+    {
+      "id": "66a3",
+      "title": "Fullstack developer",
+      "type": "Full-Time",
+      "location": "Amsterdam",
+      "description": "Lorem Ipsumabahbhabhcba",
+      "salary": "$125K - $150K",
+      "company": {
+        "name": "VueJobs",
+        "description": "jacjnjnajsncjanjc lorem ipsum",
+        "contactEmail": "info@vuejobs.com",
+        "contactPhone": "061772828"
+      }
+    },
+    {
+      "id": "cf7a",
+      "title": "Fullstack developer",
+      "type": "Full-Time",
+      "location": "Amsterdam",
+      "description": "cnancansansncaksjkcna",
+      "salary": "$100K - $125K",
+      "company": {
+        "name": "VueJobs",
+        "description": "annjnajsncjansjcanjsna",
+        "contactEmail": "info@vuejobs.com",
+        "contactPhone": "06182828282"
+      }
+    },
+    {
+      "id": "d383",
+      "title": "Fullstack developer",
+      "type": "Full-Time",
+      "location": "Amsterdam",
+      "description": "ajnjsnjancjajscnajsncjanjcna",
+      "salary": "$150K - $175K",
+      "company": {
+        "name": "VueJobs",
+        "description": "akmckamkcmakmckamkscmakmsc",
+        "contactEmail": "info@vuejobs.com",
+        "contactPhone": "061727282"
+      }
+    },
+    {
+      "title": "Fullstack developer",
+      "type": "Full-Time",
+      "location": "Amsterdam",
+      "description": "Test description 5",
+      "salary": "$60K - $70K",
+      "company": {
+        "name": "VueJobs",
+        "description": "some updated description",
+        "contactEmail": "info@vuejobs.com",
+        "contactPhone": "061717288272"
+      },
+      "id": "5b8b"
+    },
+    {
+      "title": "Fullstack developer",
+      "type": "Full-Time",
+      "location": "Amsterdam",
+      "description": "Updated description once more",
+      "salary": "$150K - $175K",
+      "company": {
+        "name": "VueJobs",
+        "description": "jksksnjvsdjvnjsnvjsnjvnsv",
+        "contactEmail": "info@vuejobs.com",
+        "contactPhone": "0617272838383"
+      },
+      "id": "a320"
     }
-    {!isLoading && 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {jobs.map(job => (
-          // <-- Show job listing when done loading -->
-          <JobListing  key={job.id} job={job} />
-        ))}
-      </div>
-    }
-  </div>
-</section>
-{ showButton && 
-  <section class="m-auto max-w-lg my-10 px-6">
-    <a
-      href="/jobs"
-      class="block bg-black text-white text-center py-4 px-6 rounded-xl hover:bg-gray-700"
-    >
-      View All Jobs
-    </a>
-  </section>
+  ]
 }
