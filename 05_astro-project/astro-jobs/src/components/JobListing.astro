@@ -13,7 +13,7 @@ const { job } = Astro.props;
     </div>
 
     <div class="mb-5">
-      <DescriptionToggle client:visible job={job}/>
+      <DescriptionToggle client:visible description={job.description}/>
     </div>
 
 

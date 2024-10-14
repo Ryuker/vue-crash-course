@@ -2,16 +2,9 @@
   import { ref, computed } from 'vue';
   
   const props = defineProps({
-    job: {
-      type: Object,
-      default: {
-        id: 0,
-        type: 'Job Type',
-        title: 'Job Title',
-        description: 'Job Description',
-        salary: 'Job Salary',
-        location: 'Job Location',
-      }
+    description: {
+      type: String,
+      default: 'Job Description'
     }
   })
   
@@ -22,7 +15,7 @@
   }
   
   const truncatedDescription = computed(() => {
-    let description = props.job.description;
+    let description = props.description;
   
     if(!showFullDescription.value) {
       description = description.substring(0, 90) + '...';
