@@ -1,7 +1,10 @@
 ---
-const { job } = Astro.props;
+import DescriptionToggle from "./Vue/DescriptionToggle.vue";
 
+const { job } = Astro.props;
 ---
+
+
 <div class="bg-white rounded-xl shadow-md relative">
   <div class="p-4">
     <div class="mb-6">
@@ -10,12 +13,7 @@ const { job } = Astro.props;
     </div>
 
     <div class="mb-5">
-      <!-- <div>{ truncatedDescription }</div>
-      <button 
-        @click="toggleFullDescription" 
-        class="text-green-500 hover:text-green-600 mb-5">
-        { showFullDescription ? 'Less' : 'More' }
-      </button> -->
+      <DescriptionToggle client:visible job={job}/>
     </div>
 
 
