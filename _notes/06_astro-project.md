@@ -15,8 +15,11 @@
     [v] active link background color
     [v] prevent background on logo if it's active link
   [v] Hero
+  [v] HomeCards
+    [v] Card
   [] JobListings
-    [] 
+    [] load jobs into array from fetch call
+    [] display Job Listing using map function
 [v] setup pages
   [] jobs page
     [] skeleton
