@@ -17,6 +17,10 @@
   [v] Hero
   [v] HomeCards
     [v] Card
+  [] JobListing
+    [v] props
+    [] truncated description
+    [] display full description on toggle
   [] JobListings
     [] load jobs into array from fetch call
     [] display Job Listing using map function
