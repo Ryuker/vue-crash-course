@@ -14,7 +14,7 @@ const data = await response.json();
 const job = data;
 ---
 
-<Layout title="Astro Job">
+<Layout title={`${job.title} - ${job.company.name}`}>
   <BackButton />
   <section class="bg-green-50">
     {isLoading && 
