@@ -7,26 +7,23 @@ import { reactive, onMounted } from 'vue';
 // const route = useRoute();
 // const toast = useToast();
 
-const props  = defineProps({
-  jobId: String | undefined
+const { jobId, job } = defineProps({
+  job: Object
 });
 
-const state = reactive({
-  job: {},
-  isLoading: true
-});
+console.log(job);
 
 const form = reactive({
-  type: '',
-  title: '',
-  description: '',
-  salary: '',
-  location: '',
+  type: job.type,
+  title: job.title,
+  description: job.description,
+  salary: job.salary,
+  location: job.salary,
   company: {
-    name: '',
-    description: '',
-    contactEmail: '',
-    contactPhone: '' 
+    name: job.company.name,
+    description: job.company.description,
+    contactEmail: job.company.contactEmail,
+    contactPhone: job.company.contactPhone 
   }
 });
 
@@ -45,7 +42,7 @@ const handleSubmit = async() => {
     }
   }
   try{
-    const response = await fetch(`/api/jobs/${props.jobId}`, {
+    const response = await fetch(`/api/jobs/${job.id}`, {
       method: 'PUT',
       body: JSON.stringify(updatedJob)
     });
@@ -58,37 +55,15 @@ const handleSubmit = async() => {
   }
 }
 
-onMounted(async() => {
-  try{
-    const response = await fetch(`/api/jobs/${props.jobId}`)
-    state.job = await response.json();
-    console.log(state.job);
-    
-    form.type = state.job.type;
-    form.title = state.job.title;
-    form.description = state.job.description;
-    form.salary = state.job.salary;
-    form.location = state.job.location;
-    form.company.name = state.job.company.name;
-    form.company.description = state.job.company.description;
-    form.company.contactEmail = state.job.company.contactEmail;
-    form.company.contactPhone = state.job.company.contactPhone;
-  } catch(error){
-    console.log('Error fetching job', error);
-  } finally {
-    state.isLoading = false;
-  }
-});
-
 </script>
 
 <template>
  <section class="bg-green-50">
-    <div v-if="state.isLoading" class="container text-center m-auto py-10 px-6">
+    <!-- <div v-if="state.isLoading" class="container text-center m-auto py-10 px-6">
       <div>Loading Job Data</div>
-      <!-- <PulseLoader /> -->
-    </div>
-    <div v-else class="container m-auto max-w-2xl py-24">
+      <PulseLoader />
+    </div> -->
+    <div class="container m-auto max-w-2xl py-24">
       <div
         class="bg-white px-6 py-8 mb-4 shadow-md rounded-md border m-4 md:m-0"
       >

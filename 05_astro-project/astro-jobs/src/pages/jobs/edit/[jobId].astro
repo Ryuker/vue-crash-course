@@ -7,12 +7,12 @@ const isLoading = false;
 
 const { jobId }  = Astro.params;
 
-// const api_url = new URL(`/api/jobs/${jobId}`, Astro.url);
+const api_url = new URL(`/api/jobs/${jobId}`, Astro.url);
 
-// const response = await fetch(api_url);
-// const data = await response.json();
+const response = await fetch(api_url);
+const data = await response.json();
 
-// const job = data;
+const job = data;
 
 ---
 
@@ -24,6 +24,6 @@ const { jobId }  = Astro.params;
     </div>
   }
   {!isLoading &&
-    <EditForm client:load jobId={jobId}/>
+    <EditForm client:load job={job} />
   }
 </Layout>
