@@ -38,9 +38,9 @@
     [] redirect to newly updated job page when successfull
 
 [v] setup pages
-  [] jobs page
-    [] skeleton
-    [] styling
+  [v] jobs page
+    [v] skeleton
+    [v] styling
   [v] add jobs page
     [v] skeleton
     [v] styling
