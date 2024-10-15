@@ -60,8 +60,13 @@
   [] GET request handler for Dynamic Job ID
     [v] fetch data from external API or Astro collections?
     [v] serve data to GET request 
-  [] setup request handlers
-  [] 
+  [v] POST request hander
+  [] PUT request handler (dynamic page id)
+    [v] connect to external api
+    [] test
+  [] DELETE request handler (dynamic page id)
+    [v] connect to external api
+    [] test
 
 [] install and configure:
   [v] json-server
