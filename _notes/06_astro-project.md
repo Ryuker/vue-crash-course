@@ -30,9 +30,13 @@
     [v] content and styling
     [v] submit post request
     [v] redirect to newly created job page when successfull
-  [] Edit Job Form (vue component)
-    [] 
-    
+  [v] Edit Job Form (vue component)
+    [v] content and styling
+    [] populate form with original job data
+    [] submit put request
+      [] test
+    [] redirect to newly updated job page when successfull
+
 [v] setup pages
   [] jobs page
     [] skeleton

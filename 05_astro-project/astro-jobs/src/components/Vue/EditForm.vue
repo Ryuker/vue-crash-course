@@ -1,11 +1,15 @@
 <script setup>
 // import PulseLoader from 'vue-spinner/src/PulseLoader.vue';
+import { defineProps } from 'vue';
+import { reactive, onMounted } from 'vue';
 // import { useToast } from 'vue-toastification';
 
-const router = useRouter();
-const toast = useToast();
+// const route = useRoute();
+// const toast = useToast();
 
-const { id: jobId } = useRoute().params;
+const props  = defineProps({
+  jobId: String | undefined
+});
 
 const state = reactive({
   job: {},
@@ -41,45 +45,48 @@ const handleSubmit = async() => {
     }
   }
   try{
-    const { data: job } = await useFetch(`/api/jobs/${jobId}`, {
+    const response = await fetch(`/api/jobs/${props.jobId}`, {
       method: 'PUT',
-      body: { updatedJob }
+      body: JSON.stringify(updatedJob)
     });
-    toast.success('Job updated successfully');
-    router.push(`/jobs/${job.value.id}`);
+    const updatedJobData = response.json();
+    // toast.success('Job updated successfully');
+    window.location.href = `/jobs/${updatedJobData.id}`; // reroute to updated job page
   } catch(error){
     console.log('error updating job', error);
-    toast.error('Job was not updated');
+    // toast.error('Job was not updated');
   }
 }
 
-
-try{
-  const { data: job } = await useFetch(`/api/jobs/${jobId}`)
-  state.job = job.value;
-  
-  form.type = state.job.type;
-  form.title = state.job.title;
-  form.description = state.job.description;
-  form.salary = state.job.salary;
-  form.location = state.job.location;
-  form.company.name = state.job.company.name;
-  form.company.description = state.job.company.description;
-  form.company.contactEmail = state.job.company.contactEmail;
-  form.company.contactPhone = state.job.company.contactPhone;
-} catch(error){
-  console.log('Error fetching job', error);
-} finally {
-  state.isLoading = false;
-}
+onMounted(async() => {
+  try{
+    const response = await fetch(`/api/jobs/${props.jobId}`)
+    state.job = await response.json();
+    console.log(state.job);
+    
+    form.type = state.job.type;
+    form.title = state.job.title;
+    form.description = state.job.description;
+    form.salary = state.job.salary;
+    form.location = state.job.location;
+    form.company.name = state.job.company.name;
+    form.company.description = state.job.company.description;
+    form.company.contactEmail = state.job.company.contactEmail;
+    form.company.contactPhone = state.job.company.contactPhone;
+  } catch(error){
+    console.log('Error fetching job', error);
+  } finally {
+    state.isLoading = false;
+  }
+});
 
 </script>
 
 <template>
-  <BackButton />
  <section class="bg-green-50">
     <div v-if="state.isLoading" class="container text-center m-auto py-10 px-6">
-      <PulseLoader />
+      <div>Loading Job Data</div>
+      <!-- <PulseLoader /> -->
     </div>
     <div v-else class="container m-auto max-w-2xl py-24">
       <div

@@ -1,4 +1,29 @@
-<Layout title="Job Edit Page">
-  
+---
+import BackButton from "@components/BackButton.astro";
+import EditForm from "@components/Vue/EditForm.vue";
+import Layout from "@layouts/layout.astro";
 
+const isLoading = false;
+
+const { jobId }  = Astro.params;
+
+// const api_url = new URL(`/api/jobs/${jobId}`, Astro.url);
+
+// const response = await fetch(api_url);
+// const data = await response.json();
+
+// const job = data;
+
+---
+
+<Layout title="Job Edit Page">
+  <BackButton />
+  {isLoading && 
+    <div class="container text-center m-auto py-10 px-6">
+      {/* <!-- <PulseLoader /> --> */}
+    </div>
+  }
+  {!isLoading &&
+    <EditForm client:load jobId={jobId}/>
+  }
 </Layout>

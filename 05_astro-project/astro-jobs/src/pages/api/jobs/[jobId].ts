@@ -32,3 +32,26 @@ export const GET: APIRoute = async ({ params, request }) => {
 
   return new Response(dataStr);
 }
+
+export const PUT: APIRoute = async ({ params, request }) => {
+  console.log('Put request received');
+  const jobId = params.jobId;
+
+  const updatedJob = await request.json();
+
+  // Fetch the data from the external API
+  const api_endpoint = 'http://localhost:5000/jobs';
+  const uri = `${api_endpoint}/${jobId}`;
+  const response = await fetch(uri, {
+    method: 'POST',
+    body: JSON.stringify(updatedJob)
+  });
+
+  const jobData = await response.json();
+
+  const data = jobData;
+
+  const dataStr = JSON.stringify(data);
+
+  return new Response(dataStr);
+}
