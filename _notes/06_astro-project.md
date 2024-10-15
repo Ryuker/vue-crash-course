@@ -22,7 +22,7 @@
     [v] truncated description (vue component)
       [v] display full description on toggle
   [] JobListings
-    [] load jobs into array from fetch call
+    [v] load jobs into array from fetch call
     [v] display Job Listing using map function
     [v] ViewAllJobs button prop and condiditional display
   [] BackButton
@@ -30,9 +30,9 @@
   [] jobs page
     [] skeleton
     [] styling
-  [] add jobs page
-    [] skeleton
-    [] styling
+  [v] add jobs page
+    [v] skeleton
+    [v] styling
   [v] dynamic job page
     [v] skeleton
     [v] styling
