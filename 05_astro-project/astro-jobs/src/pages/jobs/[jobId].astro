@@ -89,7 +89,7 @@ const job = data;
                 >Edit Job
               </a>
               <button
-                on-click="handleDelete"
+                id="deleteBtn"
                 class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline mt-4 block"
               >
                 Delete Job
@@ -102,3 +102,27 @@ const job = data;
     
   </section>
 </Layout>
+
+<script>
+const deleteBtn = document.getElementById('deleteBtn');
+
+if(deleteBtn){
+  deleteBtn.addEventListener('click', async() => {
+    console.log('clicked delete button');
+    const { jobId } = Astro.params;
+    const api_url = new URL(`/api/jobs/${jobId}`, Astro.url);
+
+    try {
+      const response = await fetch(api_url, {
+        method: 'DELETE'
+      });
+      const deleted = response.json();
+      window.location.href = `/jobs/`; // reroute to jobs page
+    } catch(error){
+      console.log('error deleting job', error);
+    }
+  });
+}
+  
+
+</script>

@@ -51,6 +51,10 @@
   [] edit job page
     [] skeleton
     [] styling
+    [] delete button (js script)
+      [v] submit delete request
+      [v] reroute to page
+      [] test functionality
 
 [] setup API routes to get data
   [] GET request handler for Dynamic Job ID
