@@ -251,6 +251,20 @@
         "contactPhone": "0617272838383"
       },
       "id": "a320"
+    },
+    {
+      "id": "c2fc",
+      "title": "Vue Developer",
+      "type": "Internship",
+      "location": "Amsterdam",
+      "description": "cjancjkanjanjskjakcn",
+      "salary": "$90K - $100K",
+      "company": {
+        "name": "VueJobs",
+        "description": "ancajjkanjkcnajkcns",
+        "contactEmail": "info@vuejobs.com",
+        "contactPhone": "06172727272"
+      }
     }
   ]
 }

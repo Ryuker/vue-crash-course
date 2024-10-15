@@ -26,6 +26,13 @@
     [v] display Job Listing using map function
     [v] ViewAllJobs button prop and condiditional display
   [] BackButton
+  [] Add Job Form (vue component)
+    [v] content and styling
+    [v] submit post request
+    [v] redirect to newly created job page when successfull
+  [] Edit Job Form (vue component)
+    [] 
+    
 [v] setup pages
   [] jobs page
     [] skeleton

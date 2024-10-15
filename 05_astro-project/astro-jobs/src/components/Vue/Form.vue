@@ -34,14 +34,13 @@ const handleSubmit = async() => {
     }
   }
   try{
-    const { data: job } = await fetch('/api/jobs', {
+    const response = await fetch('/api/jobs', {
       method: 'POST',
-      body: { newJob }
+      body: JSON.stringify(newJob)
     });
-
-    toast.success('Job added successfully');
-    // router.push(`/jobs/${job.value.id}`);
-    // window.location.href = '/jobs/${job.value.id}';
+    const job = await response.json();
+    // toast.success('Job added successfully');
+    window.location.href = `/jobs/${job.id}`; // reroute to newly created job page
   } catch(error){
     console.log('error submitting new job', error);
     // toast.error('Job was not added');
