@@ -51,10 +51,10 @@
   [] edit job page
     [] skeleton
     [] styling
-    [] delete button (js script)
+    [v] delete button (js script)
       [v] submit delete request
       [v] reroute to page
-      [] test functionality
+      [v] test functionality
 
 [] setup API routes to get data
   [] GET request handler for Dynamic Job ID
@@ -64,9 +64,9 @@
   [] PUT request handler (dynamic page id)
     [v] connect to external api
     [] test
-  [] DELETE request handler (dynamic page id)
+  [v] DELETE request handler (dynamic page id)
     [v] connect to external api
-    [] test
+    [v] test
 
 [] install and configure:
   [v] json-server

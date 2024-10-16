@@ -55,3 +55,23 @@ export const PUT: APIRoute = async ({ params, request }) => {
 
   return new Response(dataStr);
 }
+
+export const DELETE: APIRoute = async ({ params, request }) => {
+  console.log('Delete request received');
+  const jobId = params.jobId;
+
+  // Fetch the data from the external API
+  const api_endpoint = 'http://localhost:5000/jobs';
+  const uri = `${api_endpoint}/${jobId}`;
+  const response = await fetch(uri, {
+    method: 'DELETE'
+  });
+  const jobData = await response.json();
+
+  const data = jobData;
+
+  const dataStr = JSON.stringify(data);
+
+  // return new Response(dataStr);
+  return new Response('Delete request received');
+}

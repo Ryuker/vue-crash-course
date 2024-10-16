@@ -197,20 +197,6 @@
       }
     },
     {
-      "id": "cf7a",
-      "title": "Fullstack developer",
-      "type": "Full-Time",
-      "location": "Amsterdam",
-      "description": "cnancansansncaksjkcna",
-      "salary": "$100K - $125K",
-      "company": {
-        "name": "VueJobs",
-        "description": "annjnajsncjansjcanjsna",
-        "contactEmail": "info@vuejobs.com",
-        "contactPhone": "06182828282"
-      }
-    },
-    {
       "id": "d383",
       "title": "Fullstack developer",
       "type": "Full-Time",
@@ -223,34 +209,6 @@
         "contactEmail": "info@vuejobs.com",
         "contactPhone": "061727282"
       }
-    },
-    {
-      "title": "Fullstack developer",
-      "type": "Full-Time",
-      "location": "Amsterdam",
-      "description": "Test description 5",
-      "salary": "$60K - $70K",
-      "company": {
-        "name": "VueJobs",
-        "description": "some updated description",
-        "contactEmail": "info@vuejobs.com",
-        "contactPhone": "061717288272"
-      },
-      "id": "5b8b"
-    },
-    {
-      "title": "Fullstack developer",
-      "type": "Full-Time",
-      "location": "Amsterdam",
-      "description": "Updated description once more",
-      "salary": "$150K - $175K",
-      "company": {
-        "name": "VueJobs",
-        "description": "jksksnjvsdjvnjsnvjsnjvnsv",
-        "contactEmail": "info@vuejobs.com",
-        "contactPhone": "0617272838383"
-      },
-      "id": "a320"
     },
     {
       "id": "c2fc",
