@@ -17,25 +17,27 @@
   [v] Hero
   [v] HomeCards
     [v] Card
-  [] JobListing
+  [v] JobListing
     [v] props
     [v] truncated description (vue component)
       [v] display full description on toggle
-  [] JobListings
+  [v] JobListings
     [v] load jobs into array from fetch call
     [v] display Job Listing using map function
     [v] ViewAllJobs button prop and condiditional display
   [] BackButton
+    [] icon
+
   [] Add Job Form (vue component)
     [v] content and styling
     [v] submit post request
     [v] redirect to newly created job page when successfull
   [v] Edit Job Form (vue component)
     [v] content and styling
-    [] populate form with original job data
-    [] submit put request
-      [] test
-    [] redirect to newly updated job page when successfull
+    [v] populate form with original job data
+    [v] submit put request
+      [v] test
+    [v] redirect to newly updated job page when successfull
 
 [v] setup pages
   [v] jobs page
@@ -48,9 +50,9 @@
     [v] skeleton
     [v] styling
     [v] fetch data from API and display
-  [] edit job page
-    [] skeleton
-    [] styling
+  [v] edit job page
+    [v] skeleton
+    [v] styling
     [v] delete button (js script)
       [v] submit delete request
       [v] reroute to page
@@ -61,7 +63,7 @@
     [v] fetch data from external API or Astro collections?
     [v] serve data to GET request 
   [v] POST request hander
-  [] PUT request handler (dynamic page id)
+  [v] PUT request handler (dynamic page id)
     [v] connect to external api
     [] test
   [v] DELETE request handler (dynamic page id)

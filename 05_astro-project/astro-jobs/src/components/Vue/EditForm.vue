@@ -46,7 +46,7 @@ const handleSubmit = async() => {
       method: 'PUT',
       body: JSON.stringify(updatedJob)
     });
-    const updatedJobData = response.json();
+    const updatedJobData = await response.json();
     // toast.success('Job updated successfully');
     window.location.href = `/jobs/${updatedJobData.id}`; // reroute to updated job page
   } catch(error){

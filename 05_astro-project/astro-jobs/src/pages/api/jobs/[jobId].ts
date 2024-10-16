@@ -43,7 +43,7 @@ export const PUT: APIRoute = async ({ params, request }) => {
   const api_endpoint = 'http://localhost:5000/jobs';
   const uri = `${api_endpoint}/${jobId}`;
   const response = await fetch(uri, {
-    method: 'POST',
+    method: 'PUT',
     body: JSON.stringify(updatedJob)
   });
 
@@ -72,6 +72,5 @@ export const DELETE: APIRoute = async ({ params, request }) => {
 
   const dataStr = JSON.stringify(data);
 
-  // return new Response(dataStr);
-  return new Response('Delete request received');
+  return new Response(dataStr);
 }
