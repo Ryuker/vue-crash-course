@@ -73,4 +73,5 @@
 [] install and configure:
   [v] json-server
   [] toastification
-  [] prime icons
+  [v] prime icons
+    ! Unable to load this using astro.config so I loaded into the layout instead
