@@ -9,7 +9,7 @@
 [v] setup default layout
   [] styling
 
-[]  components:
+[v]  components:
   [v] Navbar
     [] links
     [v] active link background color
@@ -58,8 +58,8 @@
       [v] reroute to page
       [v] test functionality
 
-[] setup API routes to get data
-  [] GET request handler for Dynamic Job ID
+[v] setup API routes to get data
+  [v] GET request handler for Dynamic Job ID
     [v] fetch data from external API or Astro collections?
     [v] serve data to GET request 
   [v] POST request hander
