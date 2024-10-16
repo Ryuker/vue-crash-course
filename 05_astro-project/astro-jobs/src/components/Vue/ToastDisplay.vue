@@ -1,11 +1,16 @@
 <script setup>
-import { useToast } from "vue-toastification";
+import { useToast } from "vue-toastification/dist/index.mjs";
 
 const toast = useToast();
+
+
+const displayToast = () => {
+  console.log('display toast');
+  toast.success('Job deleted successfully');
+}
 
 </script>
 
 <template>
-  <div>rendering toast</div>
-  <Toast />
+  <button class='btn' @click="displayToast">Display Toast</button>
 </template>

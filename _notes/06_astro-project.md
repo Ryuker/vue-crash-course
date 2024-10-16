@@ -25,8 +25,12 @@
     [v] load jobs into array from fetch call
     [v] display Job Listing using map function
     [v] ViewAllJobs button prop and condiditional display
-  [] BackButton
-    [] icon
+  [v] BackButton
+    [v] icon
+
+  [] ToastDisplay
+    [] display on every page
+    [] display when 
 
   [] Add Job Form (vue component)
     [v] content and styling
@@ -70,8 +74,11 @@
     [v] connect to external api
     [v] test
 
+
 [] install and configure:
   [v] json-server
-  [] toastification
+  [v] toastification
+     - configured using global app load of vue
+     - plugin is a bit iffy, needed to do some workaround to get it working
   [v] prime icons
     ! Unable to load this using astro.config so I loaded into the layout instead

@@ -1,8 +1,10 @@
+// Loads a global vue instance that handled the toast notification display
 import type { App } from 'vue';
-import * as vt from 'vue-toastification';
-import Toast from 'vue-toastification';
+
+// @ts-ignore
+import Toast from "vue-toastification/dist/index.mjs";
 import 'vue-toastification/dist/index.css';
 
-export default (app: App) => {
-  app.use(Toast);
-};
+export default (app: App ) => {
+    app.use(Toast);
+}
