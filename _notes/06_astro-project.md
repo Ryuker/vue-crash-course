@@ -7,7 +7,8 @@
 [v] install Astro, setup new project
 [v] install and configure Tailwind
 [v] setup default layout
-  [] styling
+  [v] styling
+  [] view-transitions to support toast display
 
 [v]  components:
   [v] Navbar
@@ -28,9 +29,9 @@
   [v] BackButton
     [v] icon
 
-  [] ToastDisplay
-    [] display on every page
-    [] display when 
+  [v] ToastDisplay
+    [v] display on every page
+    [] persist during view transition
 
   [] Add Job Form (vue component)
     [v] content and styling
