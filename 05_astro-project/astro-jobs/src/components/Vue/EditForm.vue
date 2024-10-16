@@ -1,6 +1,5 @@
 <script setup>
 // import PulseLoader from 'vue-spinner/src/PulseLoader.vue';
-import { defineProps } from 'vue';
 import { reactive, onMounted } from 'vue';
 // import { useToast } from 'vue-toastification';
 
@@ -48,10 +47,10 @@ const handleSubmit = async() => {
     });
     const updatedJobData = await response.json();
     // toast.success('Job updated successfully');
-    window.location.href = `/jobs/${updatedJobData.id}`; // reroute to updated job page
+    // window.location.href = `/jobs/${updatedJobData.id}`; // reroute to updated job page
   } catch(error){
     console.log('error updating job', error);
-    // toast.error('Job was not updated');
+    toast.error('Job was not updated');
   }
 }
 

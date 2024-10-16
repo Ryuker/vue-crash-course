@@ -7,6 +7,9 @@ import vue from '@astrojs/vue';
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind(), vue()],
+  integrations: [
+    tailwind(), 
+    vue({ appEntrypoint: '/src/pages/_vue-app' })
+  ],
   output: 'server'
 });
