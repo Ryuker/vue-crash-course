@@ -167,20 +167,6 @@
         "contactEmail": "info@vuejobs.com",
         "contactPhone": "0617272773"
       }
-    },
-    {
-      "id": "8246",
-      "title": "Fullstack developer",
-      "type": "Full-Time",
-      "location": "Amsterdam",
-      "description": "Lorem ipsum",
-      "salary": "$150K - $175K",
-      "company": {
-        "name": "VueJobs",
-        "description": "lorem ipsum bahbchabhjab",
-        "contactEmail": "info@vuejobs.com",
-        "contactPhone": "06172728282"
-      }
     }
   ]
 }

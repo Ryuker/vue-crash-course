@@ -86,6 +86,10 @@
     ! Unable to load this using astro.config so I loaded into the layout instead
 
 
+
+ViewTransitions without using component : [link](https://astro.build/blog/future-of-astro-zero-js-view-transitions/)
+ViewTransitions with component: [link](https://docs.astro.build/en/guides/view-transitions/#astrobefore-swap)
+
 Vanilla DeleteBtn (not using):
 ```JS
 <!-- <script>
