@@ -1,7 +1,6 @@
 <script setup>
 import { reactive } from 'vue';
-// import { useToast } from 'vue-toastification';
-// const router = useRouter();
+import { useToast } from "vue-toastification/dist/index.mjs";
 
 const form = reactive({
   type: 'Full-Time',
@@ -17,7 +16,7 @@ const form = reactive({
   }
 });
 
-// const toast = useToast();
+const toast = useToast();
 
 const handleSubmit = async() => {
   const newJob = {
@@ -39,11 +38,11 @@ const handleSubmit = async() => {
       body: JSON.stringify(newJob)
     });
     const job = await response.json();
-    // toast.success('Job added successfully');
+    toast.success('Job added successfully');
     window.location.href = `/jobs/${job.id}`; // reroute to newly created job page
   } catch(error){
     console.log('error submitting new job', error);
-    // toast.error('Job was not added');
+    toast.error('Job was not added');
   }
 }
 </script>

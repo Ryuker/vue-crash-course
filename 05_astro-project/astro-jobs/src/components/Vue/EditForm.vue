@@ -1,10 +1,8 @@
 <script setup>
-// import PulseLoader from 'vue-spinner/src/PulseLoader.vue';
-import { reactive, onMounted } from 'vue';
-// import { useToast } from 'vue-toastification';
+import { useToast } from "vue-toastification/dist/index.mjs";
+import { reactive} from 'vue';
 
-// const route = useRoute();
-// const toast = useToast();
+const toast = useToast();
 
 const { jobId, job } = defineProps({
   job: Object
@@ -46,8 +44,8 @@ const handleSubmit = async() => {
       body: JSON.stringify(updatedJob)
     });
     const updatedJobData = await response.json();
-    // toast.success('Job updated successfully');
-    // window.location.href = `/jobs/${updatedJobData.id}`; // reroute to updated job page
+    toast.success('Job updated successfully');
+    window.location.href = `/jobs/${updatedJobData.id}`; // reroute to updated job page
   } catch(error){
     console.log('error updating job', error);
     toast.error('Job was not updated');
@@ -58,10 +56,6 @@ const handleSubmit = async() => {
 
 <template>
  <section class="bg-green-50">
-    <!-- <div v-if="state.isLoading" class="container text-center m-auto py-10 px-6">
-      <div>Loading Job Data</div>
-      <PulseLoader />
-    </div> -->
     <div class="container m-auto max-w-2xl py-24">
       <div
         class="bg-white px-6 py-8 mb-4 shadow-md rounded-md border m-4 md:m-0"
