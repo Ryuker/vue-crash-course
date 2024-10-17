@@ -181,34 +181,6 @@
         "contactEmail": "info@vuejobs.com",
         "contactPhone": "06172728282"
       }
-    },
-    {
-      "id": "66a3",
-      "title": "Fullstack developer",
-      "type": "Full-Time",
-      "location": "Amsterdam",
-      "description": "Lorem Ipsumabahbhabhcba",
-      "salary": "$125K - $150K",
-      "company": {
-        "name": "VueJobs",
-        "description": "jacjnjnajsncjanjc lorem ipsum",
-        "contactEmail": "info@vuejobs.com",
-        "contactPhone": "061772828"
-      }
-    },
-    {
-      "title": "Vue Developer",
-      "type": "Internship",
-      "location": "$90K - $100K",
-      "description": "Updated description again.",
-      "salary": "$90K - $100K",
-      "company": {
-        "name": "VueJobs",
-        "description": "ancajjkanjkcnajkcns",
-        "contactEmail": "info@vuejobs.com",
-        "contactPhone": "06172727272"
-      },
-      "id": "c2fc"
     }
   ]
 }
