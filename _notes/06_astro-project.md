@@ -90,7 +90,83 @@
 ViewTransitions without using component : [link](https://astro.build/blog/future-of-astro-zero-js-view-transitions/)
 ViewTransitions with component: [link](https://docs.astro.build/en/guides/view-transitions/#astrobefore-swap)
 
-Vanilla DeleteBtn (not using):
+## known issues:
+[] Vue plugins get loaded for each vue components instance
+  - this is rather excessive
+  [] for vue-toastification this results in multiple dives being created for each component 
+  [] each vue component now loads vue-toastification
+
+
+
+**how to export vue app instance**
+  1. create `/pages/_app-vue.ts`
+  2. add the following code
+    - we need to create the App manually so we can export it afterwards. 
+      - This is good for global configuration in general
+``` TS 
+// Loads a global vue instance that handled the toast notification display
+import type { App } from 'vue';
+import { createApp } from 'vue';
+
+// @ts-ignore
+import Toast from "vue-toastification/dist/index.mjs";
+import 'vue-toastification/dist/index.css';
+
+const app = createApp({});
+
+// export the app instance object so we can access it inside components
+export { app };
+
+// runs for each vue instance so don't register plugins here
+// export default (app: App ) => {
+//     // app.use(Toast);
+//     // console.log('registering toast plugin for: ', app); // currently loads the plugin for each component instance
+// }
+export default (app: App ) => {
+    // app.use(Toast);
+    // console.log('registering toast plugin for: ', app); // currently loads the plugin for each component instance
+}
+```
+
+**How to register vue plugins to the vue instance**
+- since each component is it's own island...
+  - we have to add the plugin as middleware for each component
+  - so I made a script for this `UseToastPlugin.ts` which I import into the component
+  - this script loads the plugin to the app instance
+``` TS
+// Configure Toast plugin to be available to app
+import { app } from "@pages/_app-vue";
+
+// @ts-ignore
+// import Toast from "vue-toastification";
+import Toast from "vue-toastification/dist/index.mjs";
+import "vue-toastification/dist/index.css";
+
+// configure to use plugin
+app.use(Toast, {
+  transition: "Vue-Toastification__bounce",
+  maxToasts: 20,
+  newestOnTop: true
+});
+```
+- after importing this we can then access the plugin features as usual since it's not used in the app instance
+example:
+``` JS
+import "./UseToastPlugin";
+
+import { useToast } from "vue-toastification/dist/index.mjs";
+
+const toast = useToast();
+
+
+const displayToast = () => {
+  console.log('display toast');
+  toast.success('Job deleted successfully');
+}
+```
+
+
+**Vanilla DeleteBtn (not using):**
 ```JS
 <!-- <script>
   // @ts-ignore

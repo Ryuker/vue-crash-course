@@ -1,4 +1,6 @@
 <script setup>
+import "./useToastPlugin";
+
 import { reactive } from 'vue';
 import { useToast } from "vue-toastification/dist/index.mjs";
 
