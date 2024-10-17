@@ -4,7 +4,7 @@ import { reactive} from 'vue';
 
 const toast = useToast();
 
-const { jobId, job } = defineProps({
+const { job } = defineProps({
   job: Object
 });
 

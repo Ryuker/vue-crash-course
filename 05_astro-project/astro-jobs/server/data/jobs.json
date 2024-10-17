@@ -209,34 +209,6 @@
         "contactPhone": "06172727272"
       },
       "id": "c2fc"
-    },
-    {
-      "id": "ac0b",
-      "title": "Vue Developer",
-      "type": "Full-Time",
-      "location": "Amsterdam",
-      "description": "Some job description to test toast",
-      "salary": "$70K - $80K",
-      "company": {
-        "name": "VueJobs",
-        "description": "cajcnjancjanjcnajc",
-        "contactEmail": "info@vuejobs.com",
-        "contactPhone": "0617172727227"
-      }
-    },
-    {
-      "id": "6e31",
-      "title": "Vue Developer",
-      "type": "Full-Time",
-      "location": "Amsterdam",
-      "description": "Some other job description to test toast",
-      "salary": "$60K - $70K",
-      "company": {
-        "name": "VueJobs",
-        "description": "ajnjncajkncjancjnajcnjancj",
-        "contactEmail": "info@vuejobs.com",
-        "contactPhone": "0619228282"
-      }
     }
   ]
 }

@@ -28,6 +28,11 @@
     [v] ViewAllJobs button prop and condiditional display
   [v] BackButton
     [v] icon
+  [v] delete button (vue component because of the toast functionality)
+      [v] submit delete request
+      [v] reroute to page
+      [v] test functionality
+    
 
   [v] ToastDisplay
     [v] display on every page
@@ -58,10 +63,6 @@
   [v] edit job page
     [v] skeleton
     [v] styling
-    [v] delete button (js script)
-      [v] submit delete request
-      [v] reroute to page
-      [v] test functionality
 
 [v] setup API routes to get data
   [v] GET request handler for Dynamic Job ID
@@ -83,3 +84,48 @@
      - plugin is a bit iffy, needed to do some workaround to get it working
   [v] prime icons
     ! Unable to load this using astro.config so I loaded into the layout instead
+
+
+Vanilla DeleteBtn (not using):
+```JS
+<!-- <script>
+  // @ts-ignore
+import { useToast } from "vue-toastification/dist/index.mjs";
+const deleteBtn = document.getElementById('deleteBtn');
+
+const toast = useToast();
+
+if(deleteBtn){
+  deleteBtn.addEventListener('click', async() => {
+    const confirm = window.confirm('Are you sure you want to delete this job?');
+    if(confirm) {
+      const jobId = getSlug();
+
+      const api_url = new URL(`/api/jobs/${jobId}`, window.location.origin);
+
+      console.log(api_url);
+
+      try {
+        const response = await fetch(api_url, {
+          method: 'DELETE'
+        });
+        const deleted = response.json();
+        toast.success('Job deleted successfully');
+        // window.location.href = `/jobs/`; // reroute to jobs page
+      } catch(error){
+        console.log('error deleting job', error);
+        toast.error(`Job not deleted`, );
+      }
+    }
+  });
+
+  function getSlug () {
+    const pathArray = window.location.pathname.split( '/' );
+    const slug = pathArray[pathArray.length-1];
+
+    return slug;
+  }
+}
+
+</script> -->
+```

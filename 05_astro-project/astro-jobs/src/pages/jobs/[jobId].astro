@@ -1,6 +1,7 @@
 ---
 import Layout from "@layouts/layout.astro"
 import BackButton from "@components/BackButton.astro";
+import DeleteBtn from "@components/Vue/DeleteBtn.vue";
 
 const isLoading = false;
 
@@ -88,12 +89,13 @@ const job = data;
                 class="bg-green-500 hover:bg-green-600 text-white text-center font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline mt-4 block"
                 >Edit Job
               </a>
-              <button
+              {/* <button
                 id="deleteBtn"
                 class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline mt-4 block"
               >
                 Delete Job
-              </button>
+              </button> */}
+              <DeleteBtn client:visible jobId={jobId}/>
             </div>
           </aside>
         </div>
@@ -103,39 +105,3 @@ const job = data;
   </section>
 </Layout>
 
-<script>
-const deleteBtn = document.getElementById('deleteBtn');
-
-if(deleteBtn){
-  deleteBtn.addEventListener('click', async() => {
-    const confirm = window.confirm('Are you sure you want to delete this job?');
-    if(confirm) {
-      const jobId = getSlug();
-
-      const api_url = new URL(`/api/jobs/${jobId}`, window.location.origin);
-
-      console.log(api_url);
-
-      try {
-        const response = await fetch(api_url, {
-          method: 'DELETE'
-        });
-        const deleted = response.json();
-
-        window.location.href = `/jobs/`; // reroute to jobs page
-      } catch(error){
-        console.log('error deleting job', error);
-      }
-    }
-  });
-
-  function getSlug () {
-    const pathArray = window.location.pathname.split( '/' );
-    const slug = pathArray[pathArray.length-1];
-
-    return slug;
-  }
-}
-  
-
-</script>
