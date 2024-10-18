@@ -6,7 +6,7 @@ export default defineEventHandler(async(event) => {
   // handle post data
   const { updatedJob } = await readBody(event);
 
-  console.log('updatedJob', newJob);
+  // console.log('updatedJob', updatedJob);
 
   // // api call with private key
   const api_endpoint = `http://localhost:5000/jobs/${id}`;
@@ -15,7 +15,7 @@ export default defineEventHandler(async(event) => {
     body: updatedJob
   });
 
-  console.log('data', data);
+  // console.log('data', data);
 
   // // return api data
   return data;

@@ -3,7 +3,10 @@
   "version": "0.0.0",
   "private": true,
   "type": "module",
+  "homepage": "https://ryuker.github.io/vue-jobs/",
   "scripts": {
+    "predeploy" : "npm run build",
+    "deploy" : "gh-pages -d ./dist",
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
@@ -21,6 +24,7 @@
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.0.5",
     "autoprefixer": "^10.4.20",
+    "gh-pages": "^6.2.0",
     "postcss": "^8.4.47",
     "tailwindcss": "^3.4.13",
     "vite": "^5.3.1"

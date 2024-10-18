@@ -1,7 +1,7 @@
 <template>
   <Navbar />
   <!-- Output page content -->
-   <div class="container mx-auto p-4 bg-red-200">
+   <div class="">
       <slot />
    </div>
 </template>

@@ -1,11 +1,11 @@
 <script setup>
-// import PulseLoader from 'vue-spinner/src/PulseLoader.vue';
-// import { useToast } from 'vue-toastification';
+import PulseLoader from 'vue-spinner/src/PulseLoader.vue';
+import { useToast } from 'vue-toastification';
 import BackButton from '@/components/BackButton.vue';
 
 // const route = useRoute();
-// const router = useRouter();
-// const toast = useToast();
+const router = useRouter();
+const toast = useToast();
 
 const { id: jobId } = useRoute().params;
 
@@ -16,17 +16,19 @@ const state = reactive({
 
 const handleDelete = async() => {
   console.log('Deleting post');
-  // try{
-  //   const confirm = window.confirm('Are you sure you want to delete this job?');
-  //   if(confirm) {
-  //     await axios.delete(`/api/jobs/${id}`);
-  //     // toast.success('Job deleted successfully');
-  //     // router.push('/jobs');
-  //   }
-  // } catch(error){
-  //   console.log('error deleting job', error);
-  //   // toast.error(`Job not deleted`, );
-  // }
+  try{
+    const confirm = window.confirm('Are you sure you want to delete this job?');
+    if(confirm) {
+      await useFetch(`/api/jobs/${jobId}`, {
+        method: 'DELETE'
+      });
+      toast.success('Job deleted successfully');
+      router.push('/jobs');
+    }
+  } catch(error){
+    console.log('error deleting job', error);
+    toast.error(`Job not deleted`, );
+  }
 };
 
 
@@ -44,7 +46,7 @@ try{
   <BackButton />
   <section class="bg-green-50">
       <div v-if="state.isLoading" class="container text-center m-auto py-10 px-6">
-        <!-- <PulseLoader /> -->
+        <PulseLoader />
       </div>
       <div v-else class="container m-auto py-10 px-6">
         <div class="grid grid-cols-1 md:grid-cols-70/30 w-full gap-6">

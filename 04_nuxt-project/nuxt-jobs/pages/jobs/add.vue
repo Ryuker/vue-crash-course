@@ -1,5 +1,5 @@
 <script setup>
-// import { useToast } from 'vue-toastification';
+import { useToast } from 'vue-toastification';
 const router = useRouter();
 
 const form = reactive({
@@ -16,7 +16,7 @@ const form = reactive({
   }
 });
 
-// const toast = useToast();
+const toast = useToast();
 
 const handleSubmit = async() => {
   const newJob = {
@@ -38,11 +38,11 @@ const handleSubmit = async() => {
       body: { newJob }
     });
 
-    // toast.success('Job added successfully');
+    toast.success('Job added successfully');
     router.push(`/jobs/${job.value.id}`);
   } catch(error){
     console.log('error submitting new job', error);
-    // toast.error('Job was not added');
+    toast.error('Job was not added');
   }
 }
 </script>
